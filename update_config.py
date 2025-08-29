@@ -7,8 +7,8 @@ import time
 
 # --- 配置区 ---
 URLS_TO_FETCH = [
-    "https://example.com/your-first-encoded-content-url",
-    "https://example.com/your-second-encoded-content-url"
+    "https://raw.githubusercontent.com/cmliu/cmliu/refs/heads/main/tvapi_config_json",
+    "https://gist.githubusercontent.com/senshinya/5a5cb900dfa888fd61d767530f00fc48/raw/gistfile1.txt"
 ]
 
 # --- 新增：白名单配置 ---
