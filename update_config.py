@@ -7,7 +7,8 @@ import time
 # --- 配置区 ---
 URLS_TO_FETCH = [
     "https://raw.githubusercontent.com/cmliu/cmliu/refs/heads/main/tvapi_config_json",
-    "https://example.com/your-second-encoded-content-url"
+    "https://gist.githubusercontent.com/senshinya/5a5cb900dfa888fd61d767530f00fc48/raw/gistfile1.txt"
+    "https://raw.githubusercontent.com/666zmy/MoonTV/refs/heads/main/config.json"
     # 如果有更多链接，可以继续在这里添加
 ]
 
