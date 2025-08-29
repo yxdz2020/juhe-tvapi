@@ -1,4 +1,4 @@
-name: Update and Test Config
+name: Update, Test, and Separate Configs
 
 on:
   push:
@@ -30,21 +30,25 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      # 步骤4: 运行 update_config.py 生成 config.json
-      - name: Run update_config.py to generate config.json
+      # 步骤4: 运行 update_config.py 生成原始 config.json
+      - name: Step 1 - Run update_config.py to generate config.json
         run: python update_config.py
 
-      # 步骤5: 运行 test_api_availability.py 测试新配置 (核心改动)
-      # 添加 --yes 参数来自动确认所有操作
-      - name: Run test_api_availability.py to test the new config
+      # 步骤5: 运行 test_api_availability.py 测试并清理 config.json
+      - name: Step 2 - Run test_api_availability.py to test the config
         run: python test_api_availability.py --yes
 
-      # 步骤6: 提交并推送生成的 config.json 文件
+      # 步骤6: (新增) 运行 separate_sources.py 将源分类
+      - name: Step 3 - Run separate_sources.py to classify sources
+        run: python separate_sources.py
+
+      # 步骤7: (修改) 提交并推送生成的 config.json 和 config18.json 文件
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Automated: Update and test config.json"
-          file_pattern: "config.json"
+          commit_message: "Automated: Update, test, and separate config files"
+          # 修改 file_pattern 以包含两个文件
+          file_pattern: "config.json config18.json"
           commit_user_name: "GitHub Actions"
           commit_user_email: "actions@github.com"
           commit_author: "GitHub Actions <actions@github.com>"
