@@ -4,6 +4,7 @@ import concurrent.futures
 from typing import Dict, Tuple, List
 import time
 import os
+import argparse # 导入argparse模块
 
 # 禁用SSL警告
 import urllib3
@@ -167,6 +168,15 @@ def remove_unavailable_apis(config: dict, unavailable_apis: List[str]) -> dict:
     return new_config
 
 def main():
+    # --- 核心改动：添加命令行参数解析 ---
+    parser = argparse.ArgumentParser(description="测试并清理配置文件中的API。")
+    parser.add_argument(
+        '-y', '--yes',
+        action='store_true',
+        help="自动对所有提问回答'是'，用于非交互式环境（如GitHub Actions）。"
+    )
+    args = parser.parse_args()
+
     config_path = 'config.json'
     
     # 检查配置文件是否存在
@@ -182,11 +192,12 @@ def main():
     deduplicated_config, removed_apis = remove_duplicate_apis(config)
     if removed_apis:
         print(f"识别并移除了 {len(removed_apis)} 个重复的API")
-        # 询问是否保存去重后的配置
-        choice = input(f"\n是否要将去重后的配置保存到 {config_path} ? (y/N): ")
+        
+        # --- 核心改动：使用命令行参数，不再使用input() ---
+        choice = 'y' if args.yes else input(f"\n是否要将去重后的配置保存到 {config_path} ? (y/N): ")
         if choice.lower() in ['y', 'yes']:
             # 备份原配置文件
-            backup_path = f"{config_path}.backup"
+            backup_path = f"{config_path}.backup.{int(time.time())}"
             with open(backup_path, 'w', encoding='utf-8') as f:
                 json.dump(config, f, ensure_ascii=False, indent=2)
             print(f"原配置已备份至: {backup_path}")
@@ -274,7 +285,8 @@ def main():
     
     # 询问是否移除无效的API
     if unavailable_count > 0:
-        choice = input(f"\n是否要从 {config_path} 中移除这 {unavailable_count} 个无效的API? (y/N): ")
+        # --- 核心改动：使用命令行参数，不再使用input() ---
+        choice = 'y' if args.yes else input(f"\n是否要从 {config_path} 中移除这 {unavailable_count} 个无效的API? (y/N): ")
         if choice.lower() in ['y', 'yes']:
             # 获取无效API的名称列表
             unavailable_api_names = [r[0] for r in unavailable_apis]
@@ -283,7 +295,7 @@ def main():
             updated_config = remove_unavailable_apis(config, unavailable_api_names)
             
             # 备份原配置文件
-            backup_path = f"{config_path}.backup"
+            backup_path = f"{config_path}.backup.{int(time.time())}"
             with open(backup_path, 'w', encoding='utf-8') as f:
                 json.dump(config, f, ensure_ascii=False, indent=2)
             print(f"原配置已备份至: {backup_path}")
