@@ -6,10 +6,9 @@ import time
 
 # --- 配置区 ---
 URLS_TO_FETCH = [
-    "https://raw.githubusercontent.com/cmliu/cmliu/refs/heads/main/tvapi_config_json",
-    "https://gist.githubusercontent.com/senshinya/5a5cb900dfa888fd61d767530f00fc48/raw/gistfile1.txt",
-    "https://raw.githubusercontent.com/666zmy/MoonTV/refs/heads/main/config.json"
-    # 如果有更多链接，可以继续在这里添加
+    "https://example.com/your-first-encoded-content-url",  # 这是一个Base58加密的链接
+    "https://raw.githubusercontent.com/666zmy/MoonTV/refs/heads/main/config.json", # 这是一个明文JSON链接
+    "https://example.com/your-second-encoded-content-url" # 可以混合放置
 ]
 
 # --- 白名单配置 ---
@@ -22,35 +21,62 @@ RETRY_DELAY = 5
 
 def fetch_and_decode_url(url):
     """
-    从URL获取内容，解码，并根据白名单进行过滤。
+    从URL获取内容，智能判断是Base58还是明文JSON，然后解码/解析，并根据白名单进行过滤。
     """
     for attempt in range(MAX_RETRIES):
         try:
             print(f"正在尝试第 {attempt + 1}/{MAX_RETRIES} 次请求链接: {url}")
             response = requests.get(url, timeout=15)
             response.raise_for_status()
-            encoded_content = response.text.strip()
-            if not encoded_content:
+            # 指定编码为 utf-8，避免因服务器未指定编码而导致的乱码问题
+            response.encoding = 'utf-8'
+            content = response.text.strip()
+            
+            if not content:
                 print(f"警告: 从 {url} 获取的内容为空。")
                 return None
-            decoded_bytes = base58.b58decode(encoded_content)
-            decoded_string = decoded_bytes.decode('utf-8')
-            data = json.loads(decoded_string)
-            print(f"成功解码链接内容: {url}")
+
+            data = None
+            # --- 核心改动：智能判断逻辑 ---
+            try:
+                # 路径1：首先，尝试进行Base58解码
+                print("...尝试将内容作为 Base58 解码...")
+                decoded_bytes = base58.b58decode(content)
+                decoded_string = decoded_bytes.decode('utf-8')
+                data = json.loads(decoded_string)
+                print("...成功将内容作为 Base58 解码。")
+            except Exception:
+                # 路径2：如果Base58解码失败，则认为内容是明文JSON
+                print("...Base58 解码失败，尝试直接作为明文 JSON 解析...")
+                try:
+                    data = json.loads(content)
+                    print("...成功将内容作为明文 JSON 解析。")
+                except json.JSONDecodeError as json_e:
+                    # 如果作为JSON解析也失败，说明内容格式有问题
+                    print(f"错误: 内容既不是有效的Base58，也不是有效的JSON。错误信息: {json_e}")
+                    return None
+            
+            # --- 后续流程不变 ---
+            print(f"成功解析链接内容: {url}")
             if isinstance(data, dict):
                 filtered_data = {key: data[key] for key in ALLOWED_TOP_LEVEL_KEYS if key in data}
                 if not filtered_data:
-                    print("警告: 解码后的内容中未找到任何白名单指定的键。")
+                    print("警告: 解析后的内容中未找到任何白名单指定的键。")
                     return None
                 print(f"内容已按白名单过滤，保留键: {list(filtered_data.keys())}")
                 return filtered_data
             else:
-                print("警告: 解码后的内容不是一个可按键过滤的字典。")
+                print("警告: 解析后的内容不是一个可按键过滤的字典。")
                 return None
+
+        except requests.exceptions.RequestException as req_e:
+            print(f"错误：请求链接失败: {req_e}")
         except Exception as e:
-            print(f"错误: 处理来自 {url} 的内容时出错: {e}")
+            print(f"错误: 处理来自 {url} 的内容时发生未知错误: {e}")
+        
         if attempt < MAX_RETRIES - 1:
             time.sleep(RETRY_DELAY)
+            
     print(f"错误: 在 {MAX_RETRIES} 次尝试后，仍然无法处理链接: {url}")
     return None
 
@@ -65,14 +91,13 @@ def main():
         return
     print(f"\n过滤完成，共获得 {len(clean_data_buffer)} 组有效内容。准备通过重命名方式合并...")
     
-    # --- 核心逻辑：智能合并，重命名重复项 ---
+    # 智能合并，重命名重复项
     merged_api_sites = {}
     for item in clean_data_buffer:
         if "api_site" in item and isinstance(item.get("api_site"), dict):
             for key, value in item["api_site"].items():
                 new_key = key
                 counter = 2
-                # 如果 key 已经存在，则尝试添加后缀 _2, _3, ...
                 while new_key in merged_api_sites:
                     new_key = f"{key}_{counter}"
                     counter += 1
