@@ -6,9 +6,9 @@ import time
 
 # --- 配置区 ---
 URLS_TO_FETCH = [
-    "https://example.com/your-first-encoded-content-url",  # 这是一个Base58加密的链接
+    "https://raw.githubusercontent.com/cmliu/cmliu/refs/heads/main/tvapi_config_json",  # 这是一个Base58加密的链接
     "https://raw.githubusercontent.com/666zmy/MoonTV/refs/heads/main/config.json", # 这是一个明文JSON链接
-    "https://example.com/your-second-encoded-content-url" # 可以混合放置
+    "https://gist.githubusercontent.com/senshinya/5a5cb900dfa888fd61d767530f00fc48/raw/gistfile1.txt" # 可以混合放置
 ]
 
 # --- 白名单配置 ---
