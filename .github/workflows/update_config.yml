@@ -1,0 +1,72 @@
+# 工作流名称
+name: Update Config JSON
+
+# 工作流触发器
+on:
+  # 1. 允许你从 Actions 标签页手动运行此工作流
+  workflow_dispatch:
+
+  # 2. 设置定时任务，每天执行一次（时间是 UTC 时间）
+  # 使用 crontab 表达式，'0 0 * * *' 表示每天的 00:00 UTC 时间
+  schedule:
+    - cron: '0 0 * * *'
+
+  # 3. (可选) 当推送到 main 分支时触发
+  # push:
+  #   branches:
+  #     - main
+
+# 定义任务
+jobs:
+  build-and-commit:
+    # 运行环境
+    runs-on: ubuntu-latest
+
+    # 任务步骤
+    steps:
+      # 步骤 1: 检出你的代码
+      # 使用 actions/checkout@v4 拉取仓库代码到 Actions 的运行环境中
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 步骤 2: 设置 Python 环境
+      # 使用 actions/setup-python@v5 来配置指定版本的 Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10' # 你可以根据需要选择 Python 版本
+
+      # 步骤 3: 安装依赖库
+      # 运行 pip install 命令，根据 requirements.txt 安装所有必要的库
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 步骤 4: 运行你的 Python 脚本
+      # 执行脚本以生成 config.json 文件
+      - name: Run script to generate config.json
+        run: python process_config.py # 确保你的脚本文件名正确
+
+      # 步骤 5: 提交并推送更改
+      # 检查生成的文件是否有变动，如果有，则自动提交到仓库
+      - name: Commit and push if changed
+        run: |
+          # 配置 git 用户名和邮箱
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 将变动（新生成的 config.json）添加到暂存区
+          git add config.json
+          
+          # 检查是否有文件变动。如果没有变动，则退出；如果有，则继续
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          
+          # 提交变动
+          git commit -m "CI: 自动更新 config.json"
+          
+          # 推送提交到远程仓库
+          git push
