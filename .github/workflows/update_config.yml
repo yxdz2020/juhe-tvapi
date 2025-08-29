@@ -28,21 +28,18 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          # 假设您的 test_api_availability.py 可能有额外依赖
-          # 最好将所有依赖都列在 requirements.txt 文件中
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      # 步骤4: 运行 update_config.py 生成 config.json (第一步)
+      # 步骤4: 运行 update_config.py 生成 config.json
       - name: Run update_config.py to generate config.json
         run: python update_config.py
 
-      # 步骤5: 运行 test_api_availability.py 测试新配置 (第二步)
-      # 这一步会自动在前一步成功后才执行
+      # 步骤5: 运行 test_api_availability.py 测试新配置 (核心改动)
+      # 添加 --yes 参数来自动确认所有操作
       - name: Run test_api_availability.py to test the new config
-        run: python test_api_availability.py
+        run: python test_api_availability.py --yes
 
       # 步骤6: 提交并推送生成的 config.json 文件
-      # 注意：这一步只有在前面所有步骤都成功时才会执行
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
