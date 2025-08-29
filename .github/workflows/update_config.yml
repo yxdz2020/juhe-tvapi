@@ -1,18 +1,17 @@
-name: Update Config JSON
+name: Update and Test Config
 
-# 触发工作流的事件
 on:
   push:
     branches:
-      - main  # 当主分支有代码推送时触发
+      - main
   schedule:
-    # 定时触发，例如每天执行一次 (UTC时间)
+    # 每天执行一次 (UTC时间)
     - cron: '0 0 * * *'
   workflow_dispatch: # 允许手动触发
 
 jobs:
   build-and-commit:
-    runs-on: ubuntu-latest # 使用最新的 Ubuntu 运行环境
+    runs-on: ubuntu-latest
 
     steps:
       # 步骤1: 检出你的代码
@@ -23,24 +22,32 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10' # 可以选择你需要的 Python 版本
+          python-version: '3.10'
 
       # 步骤3: 安装依赖项
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          # 假设您的 test_api_availability.py 可能有额外依赖
+          # 最好将所有依赖都列在 requirements.txt 文件中
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      # 步骤4: 运行 Python 脚本生成 config.json
-      - name: Run script to generate config.json
+      # 步骤4: 运行 update_config.py 生成 config.json (第一步)
+      - name: Run update_config.py to generate config.json
         run: python update_config.py
 
-      # 步骤5: 提交并推送生成的 config.json 文件
+      # 步骤5: 运行 test_api_availability.py 测试新配置 (第二步)
+      # 这一步会自动在前一步成功后才执行
+      - name: Run test_api_availability.py to test the new config
+        run: python test_api_availability.py
+
+      # 步骤6: 提交并推送生成的 config.json 文件
+      # 注意：这一步只有在前面所有步骤都成功时才会执行
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Automated: Update config.json"
-          file_pattern: "config.json" # 只提交 config.json 文件的变动
+          commit_message: "Automated: Update and test config.json"
+          file_pattern: "config.json"
           commit_user_name: "GitHub Actions"
           commit_user_email: "actions@github.com"
           commit_author: "GitHub Actions <actions@github.com>"
