@@ -9,11 +9,11 @@ import time
 URLS_TO_FETCH = [
     "https://raw.githubusercontent.com/cmliu/cmliu/refs/heads/main/tvapi_config_json",
     "https://gist.githubusercontent.com/senshinya/5a5cb900dfa888fd61d767530f00fc48/raw/gistfile1.txt"
+    # 如果有更多链接，可以继续在这里添加
 ]
 
-# --- 新增：白名单配置 ---
-# 定义一个“白名单”，只保留我们想要的顶级键（key）
-# 脚本将只从解码后的内容中寻找并保留这些键对应的数据
+# --- 白名单配置 ---
+# 脚本将只从解码后的内容中寻找并保留这些顶级键
 ALLOWED_TOP_LEVEL_KEYS = {
     "cache_time", 
     "api_site"
@@ -42,13 +42,11 @@ def fetch_and_decode_url(url):
             decoded_bytes = base58.b58decode(encoded_content)
             decoded_string = decoded_bytes.decode('utf-8')
             
-            # 将解码后的字符串解析为Python字典
             data = json.loads(decoded_string)
             print(f"成功解码链接内容: {url}")
 
-            # --- 核心改动：根据白名单过滤解码后的数据 ---
+            # 根据白名单过滤解码后的数据
             if isinstance(data, dict):
-                # 创建一个新字典，只包含白名单中存在的键
                 filtered_data = {
                     key: data[key] for key in ALLOWED_TOP_LEVEL_KEYS if key in data
                 }
@@ -60,7 +58,6 @@ def fetch_and_decode_url(url):
                 print(f"内容已按白名单过滤，保留键: {list(filtered_data.keys())}")
                 return filtered_data
             else:
-                # 如果解码后的内容不是字典，我们无法按键过滤，所以返回空
                 print("警告: 解码后的内容不是一个可按键过滤的字典。")
                 return None
 
@@ -79,11 +76,8 @@ def main():
     """
     print("--- 开始更新配置文件 ---")
     
-    # 这个列表将收集所有经过过滤和清理后的“干净”数据
     clean_data_buffer = []
-
     for url in URLS_TO_FETCH:
-        # fetch_and_decode_url 函数现在返回的是已经过滤好的数据
         filtered_content = fetch_and_decode_url(url)
         if filtered_content:
             clean_data_buffer.append(filtered_content)
@@ -92,28 +86,35 @@ def main():
         print("错误: 所有链接内容均为空或无法按规则过滤，无法生成配置文件。")
         return
 
-    print(f"\n过滤完成，共获得 {len(clean_data_buffer)} 组有效内容。准备写入文件...")
+    print(f"\n过滤完成，共获得 {len(clean_data_buffer)} 组有效内容。准备合并...")
 
-    # 我们仍然保持最终模板的结构，但api_site的值是经过清理的数据列表
-    # 注意：这里的结构取决于您最终想要一个对象还是多个。
-    # 根据我们之前的讨论，使用列表可以完整保留多个链接的内容。
-    final_config = {
-        # 如果您希望所有内容的cache_time都一样，可以写死
-        "cache_time": 7200, 
-        # 将所有清理过的数据放入一个列表中
-        "api_site": [item.get("api_site", {}) for item in clean_data_buffer if "api_site" in item]
-    }
-    
-    # 如果您的多个链接里的 cache_time 可能不同，且您想保留第一个有效的 cache_time
-    # 可以用下面的逻辑动态设置
+    # --- 核心改动：合并所有 api_site 内容 ---
+
+    # 1. 创建一个空的字典，用于存放所有合并后的 api_site 内容
+    merged_api_sites = {}
+
+    # 2. 遍历从所有链接中获取的干净数据
+    for item in clean_data_buffer:
+        # 确认 item 中有 "api_site" 并且其内容是一个字典
+        if "api_site" in item and isinstance(item.get("api_site"), dict):
+            # 使用 update 方法将当前链接的 api_site 内容合并进去
+            merged_api_sites.update(item["api_site"])
+
+    # 3. 决定最终的 cache_time
+    # 从所有链接中寻找第一个有效的 cache_time 值，如果都找不到，则使用默认的 7200
     first_valid_cache_time = next((item.get("cache_time") for item in clean_data_buffer if "cache_time" in item), 7200)
-    final_config["cache_time"] = first_valid_cache_time
-
+    
+    # 4. 构建最终的配置文件结构
+    final_config = {
+        "cache_time": first_valid_cache_time,
+        "api_site": merged_api_sites  # 使用我们刚刚合并好的字典
+    }
 
     try:
         with open(OUTPUT_FILENAME, 'w', encoding='utf-8') as f:
+            # json.dump 会自动处理好所有的括号和逗号
             json.dump(final_config, f, indent=4, ensure_ascii=False)
-        print(f"成功！所有内容已按白名单过滤并写入到文件: {OUTPUT_FILENAME}")
+        print(f"成功！所有内容已合并并按指定格式写入文件: {OUTPUT_FILENAME}")
     except IOError as e:
         print(f"错误: 写入文件 {OUTPUT_FILENAME} 失败: {e}")
 
