@@ -1,25 +1,32 @@
 # -*- coding: utf-8 -*-
 
-import requests  # 用于发起网络请求
-import base58    # 用于 Base58 解码
-import json      # 用于处理 JSON 数据
-import time      # 用于在重试之间添加延迟
+import requests
+import base58
+import json
+import time
 
 # --- 配置区 ---
-# 请将下面的链接替换为您需要读取的实际链接
 URLS_TO_FETCH = [
-    "https://raw.githubusercontent.com/cmliu/cmliu/refs/heads/main/tvapi_config_json",
-    "https://gist.githubusercontent.com/senshinya/5a5cb900dfa888fd61d767530f00fc48/raw/gistfile1.txt"
-    # 如果有更多链接，可以继续在这里添加
+    "https://example.com/your-first-encoded-content-url",
+    "https://example.com/your-second-encoded-content-url"
 ]
 
+# --- 新增：白名单配置 ---
+# 定义一个“白名单”，只保留我们想要的顶级键（key）
+# 脚本将只从解码后的内容中寻找并保留这些键对应的数据
+ALLOWED_TOP_LEVEL_KEYS = {
+    "cache_time", 
+    "api_site"
+}
+
+
 OUTPUT_FILENAME = "config.json"
-MAX_RETRIES = 3 # 定义请求失败时的最大重试次数
-RETRY_DELAY = 5 # 定义每次重试之间的延迟（秒）
+MAX_RETRIES = 3
+RETRY_DELAY = 5
 
 def fetch_and_decode_url(url):
     """
-    从给定的 URL 获取内容，进行 Base58 解码，并解析为 Python 对象（通常是字典）。
+    从URL获取内容，解码，并根据白名单进行过滤。
     """
     for attempt in range(MAX_RETRIES):
         try:
@@ -34,17 +41,33 @@ def fetch_and_decode_url(url):
 
             decoded_bytes = base58.b58decode(encoded_content)
             decoded_string = decoded_bytes.decode('utf-8')
+            
+            # 将解码后的字符串解析为Python字典
             data = json.loads(decoded_string)
             print(f"成功解码链接内容: {url}")
-            return data
 
-        except requests.exceptions.RequestException as e:
-            print(f"错误: 请求链接 {url} 失败: {e}")
+            # --- 核心改动：根据白名单过滤解码后的数据 ---
+            if isinstance(data, dict):
+                # 创建一个新字典，只包含白名单中存在的键
+                filtered_data = {
+                    key: data[key] for key in ALLOWED_TOP_LEVEL_KEYS if key in data
+                }
+                
+                if not filtered_data:
+                    print("警告: 解码后的内容中未找到任何白名单指定的键。")
+                    return None
+                
+                print(f"内容已按白名单过滤，保留键: {list(filtered_data.keys())}")
+                return filtered_data
+            else:
+                # 如果解码后的内容不是字典，我们无法按键过滤，所以返回空
+                print("警告: 解码后的内容不是一个可按键过滤的字典。")
+                return None
+
         except Exception as e:
             print(f"错误: 处理来自 {url} 的内容时出错: {e}")
         
         if attempt < MAX_RETRIES - 1:
-            print(f"将在 {RETRY_DELAY} 秒后重试...")
             time.sleep(RETRY_DELAY)
             
     print(f"错误: 在 {MAX_RETRIES} 次尝试后，仍然无法处理链接: {url}")
@@ -56,35 +79,41 @@ def main():
     """
     print("--- 开始更新配置文件 ---")
     
-    # 缓存区，用于存储从每个链接解码后的数据
-    # 这个列表将直接用于最终的文件内容
-    decoded_data_buffer = []
+    # 这个列表将收集所有经过过滤和清理后的“干净”数据
+    clean_data_buffer = []
 
     for url in URLS_TO_FETCH:
-        decoded_content = fetch_and_decode_url(url)
-        if decoded_content is not None:
-            decoded_data_buffer.append(decoded_content)
+        # fetch_and_decode_url 函数现在返回的是已经过滤好的数据
+        filtered_content = fetch_and_decode_url(url)
+        if filtered_content:
+            clean_data_buffer.append(filtered_content)
 
-    if not decoded_data_buffer:
-        print("错误: 所有链接均未能成功获取和解码内容，无法生成配置文件。")
+    if not clean_data_buffer:
+        print("错误: 所有链接内容均为空或无法按规则过滤，无法生成配置文件。")
         return
 
-    print(f"\n解码完成，共获得 {len(decoded_data_buffer)} 项内容。准备写入模板...")
+    print(f"\n过滤完成，共获得 {len(clean_data_buffer)} 组有效内容。准备写入文件...")
 
-    # --- 这里是核心改动 ---
-    
-    # 1. 定义您的固定模板，但这次 api_site 的值直接使用上面收集到的完整列表
-    #    不再进行字典合并，从而避免任何数据覆盖
+    # 我们仍然保持最终模板的结构，但api_site的值是经过清理的数据列表
+    # 注意：这里的结构取决于您最终想要一个对象还是多个。
+    # 根据我们之前的讨论，使用列表可以完整保留多个链接的内容。
     final_config = {
-        "cache_time": 7200,
-        "api_site": decoded_data_buffer
+        # 如果您希望所有内容的cache_time都一样，可以写死
+        "cache_time": 7200, 
+        # 将所有清理过的数据放入一个列表中
+        "api_site": [item.get("api_site", {}) for item in clean_data_buffer if "api_site" in item]
     }
+    
+    # 如果您的多个链接里的 cache_time 可能不同，且您想保留第一个有效的 cache_time
+    # 可以用下面的逻辑动态设置
+    first_valid_cache_time = next((item.get("cache_time") for item in clean_data_buffer if "cache_time" in item), 7200)
+    final_config["cache_time"] = first_valid_cache_time
 
-    # 2. 将最终构成的完整对象写入文件
+
     try:
         with open(OUTPUT_FILENAME, 'w', encoding='utf-8') as f:
             json.dump(final_config, f, indent=4, ensure_ascii=False)
-        print(f"成功！所有内容已完整写入到文件: {OUTPUT_FILENAME}")
+        print(f"成功！所有内容已按白名单过滤并写入到文件: {OUTPUT_FILENAME}")
     except IOError as e:
         print(f"错误: 写入文件 {OUTPUT_FILENAME} 失败: {e}")
 
