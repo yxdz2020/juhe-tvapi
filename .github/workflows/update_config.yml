@@ -24,6 +24,15 @@ jobs:
         with:
           python-version: '3.10'
 
+      # 步骤3: (修改) 缓存 pip 依赖项以加快执行速度
+      - name: Cache pip dependencies
+        uses: actions/cache@v4 # 使用最新的稳定版本
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       # 步骤3: 安装依赖项
       - name: Install dependencies
         run: |
