@@ -57,44 +57,34 @@ def main():
     print("--- 开始更新配置文件 ---")
     
     # 缓存区，用于存储从每个链接解码后的数据
+    # 这个列表将直接用于最终的文件内容
     decoded_data_buffer = []
 
     for url in URLS_TO_FETCH:
         decoded_content = fetch_and_decode_url(url)
-        if decoded_content: # 确保解码内容不为空
+        if decoded_content is not None:
             decoded_data_buffer.append(decoded_content)
 
     if not decoded_data_buffer:
         print("错误: 所有链接均未能成功获取和解码内容，无法生成配置文件。")
         return
 
-    print(f"\n解码完成，共获得 {len(decoded_data_buffer)} 项内容。准备合并...")
+    print(f"\n解码完成，共获得 {len(decoded_data_buffer)} 项内容。准备写入模板...")
 
     # --- 这里是核心改动 ---
-
-    # 1. 将所有解码后的字典内容合并成一个单一的字典
-    #    这会把所有影视源都放在同一个层级下
-    merged_api_sites = {}
-    for data_part in decoded_data_buffer:
-        if isinstance(data_part, dict):
-            merged_api_sites.update(data_part)
-        else:
-            print(f"警告: 解码后的部分内容不是一个字典，将跳过合并: {data_part}")
-
-    # 2. 定义您的固定模板
+    
+    # 1. 定义您的固定模板，但这次 api_site 的值直接使用上面收集到的完整列表
+    #    不再进行字典合并，从而避免任何数据覆盖
     final_config = {
         "cache_time": 7200,
-        "api_site": {} # 先创建一个空的 api_site
+        "api_site": decoded_data_buffer
     }
 
-    # 3. 将合并后的影视源内容放入模板的 "api_site" 键中
-    final_config["api_site"] = merged_api_sites
-
-    # 4. 将最终构成的完整对象写入文件
+    # 2. 将最终构成的完整对象写入文件
     try:
         with open(OUTPUT_FILENAME, 'w', encoding='utf-8') as f:
             json.dump(final_config, f, indent=4, ensure_ascii=False)
-        print(f"成功！内容已按模板格式保存到文件: {OUTPUT_FILENAME}")
+        print(f"成功！所有内容已完整写入到文件: {OUTPUT_FILENAME}")
     except IOError as e:
         print(f"错误: 写入文件 {OUTPUT_FILENAME} 失败: {e}")
 
