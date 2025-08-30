@@ -125,6 +125,10 @@
             "name": "AV-黄AV资源",
             "api": "https://www.pgxdy.com/api/json.php",
             "detail": "https://www.pgxdy.com"
+        },
+        "xiaojiziy": {
+            "api": "https://api.xiaojizy.live/provide/vod",
+            "name": "小鸡资源"
         }
     }
 }

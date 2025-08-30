@@ -259,10 +259,6 @@
             "api": "https://jyzyapi.com/provide/vod",
             "name": "金鹰资源采集网"
         },
-        "xiaojiziy": {
-            "api": "https://api.xiaojizy.live/provide/vod",
-            "name": "小鸡资源"
-        },
         "ruyi": {
             "api": "http://cj.rycjapi.com/api.php/provide/vod",
             "name": "如意资源"
