@@ -113,6 +113,11 @@
             "name": "卧龙资源",
             "detail": ""
         },
+        "tvxinlang": {
+            "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
+            "name": "新浪点播",
+            "detail": "https://api.xinlangapi.com"
+        },
         "tvwujin2": {
             "api": "https://api.wujinapi.com/api.php/provide/vod",
             "name": "无尽资源2",
@@ -228,6 +233,10 @@
         "闪电资源": {
             "api": "http://sdzyapi.com/api.php/provide/vod",
             "name": "闪电资源"
+        },
+        "新浪资源": {
+            "api": "http://api.xinlangapi.com/xinlangapi.php/provide/vod",
+            "name": "新浪资源"
         },
         "非凡资源": {
             "api": "http://cj.ffzyapi.com/api.php/provide/vod",
