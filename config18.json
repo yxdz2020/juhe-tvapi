@@ -41,11 +41,6 @@
             "api": "http://lbapiby.com/api.php/provide/vod",
             "detail": ""
         },
-        "api_54": {
-            "name": "AV-JKUN资源",
-            "api": "https://jkunzyapi.com/api.php/provide/vod",
-            "detail": "https://jkunzyapi.com"
-        },
         "api_55": {
             "name": "AV-souav资源",
             "api": "https://api.souavzy.vip/api.php/provide/vod",
@@ -115,6 +110,11 @@
             "name": "AV-香奶儿资源",
             "api": "https://www.gdlsp.com/api/json.php",
             "detail": "https://www.gdlsp.com"
+        },
+        "api_71": {
+            "name": "AV-鲨鱼资源",
+            "api": "https://shayuapi.com/api.php/provide/vod",
+            "detail": "https://shayuapi.com"
         },
         "api_72": {
             "name": "AV-黄AV资源",

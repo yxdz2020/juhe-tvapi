@@ -40,10 +40,6 @@
             "api": "https://dbzy.tv/api.php/provide/vod",
             "name": "豆瓣资源"
         },
-        "mdzy": {
-            "api": "https://www.mdzyapi.com/api.php/provide/vod",
-            "name": "魔都资源"
-        },
         "zuid": {
             "api": "https://api.zuidapi.com/api.php/provide/vod",
             "name": "最大资源"
@@ -59,10 +55,6 @@
         "wwzy": {
             "api": "https://wwzy.tv/api.php/provide/vod",
             "name": "旺旺短剧"
-        },
-        "ikun": {
-            "api": "https://ikunzyapi.com/api.php/provide/vod",
-            "name": "iKun资源"
         },
         "lzi": {
             "api": "https://cj.lziapi.com/api.php/provide/vod",
@@ -207,11 +199,6 @@
             "api": "https://p2100.net/api.php/provide/vod",
             "name": "飘零资源",
             "detail": "https://p2100.net"
-        },
-        "tvmodu": {
-            "api": "https://caiji.moduapi.cc/api.php/provide/vod",
-            "name": "魔都动漫",
-            "detail": "https://caiji.moduapi.cc"
         },
         "hongniuziyuan": {
             "api": "https://www.hongniuzy3.com/api.php/provide/vod",
