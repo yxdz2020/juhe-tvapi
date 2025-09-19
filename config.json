@@ -258,6 +258,48 @@
         "jinyingziyuan": {
             "api": "https://jyzyapi.com/provide/vod",
             "name": "金鹰资源采集网"
+        },
+        "aqyzy": {
+            "api": "https://iqiyizyapi.com/api.php/provide/vod",
+            "name": "TV-爱奇艺",
+            "detail": "https://iqiyizyapi.com",
+            "is_adult": false
+        },
+        "caijidb": {
+            "name": "TV-豆瓣资源",
+            "api": "https://caiji.dbzy5.com/api.php/provide/vod",
+            "detail": "dbzy.tv",
+            "is_adult": false
+        },
+        "1080y": {
+            "api": "https://api.yzzy-api.com/inc/apijson.php",
+            "name": "TV-优质资源",
+            "detail": "https://1080zyk4.com",
+            "is_adult": false
+        },
+        "myzy": {
+            "api": "https://api.maoyanapi.top/api.php/provide/vod",
+            "name": "TV-猫眼资源",
+            "detail": "https://www.maoyanzy.com",
+            "is_adult": false
+        },
+        "lzcaiji": {
+            "api": "https://cj.lzcaiji.com/api.php/provide/vod",
+            "name": "TV-量子资源",
+            "detail": "https://cj.lzcaiji.com",
+            "is_adult": false
+        },
+        "zuidazy": {
+            "name": "TV-最大点播",
+            "api": "https://zuidazy.me/api.php/provide/vod",
+            "detail": "https://zuidazy.co",
+            "is_adult": false
+        },
+        "jyzyapi": {
+            "name": "TV-金鹰资源",
+            "api": "https://jyzyapi.com/provide/vod/from/jinyingyun/at/json",
+            "detail": "https://jinyingzy.net",
+            "is_adult": false
         }
     }
 }
