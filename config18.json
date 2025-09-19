@@ -41,6 +41,11 @@
             "api": "http://lbapiby.com/api.php/provide/vod",
             "detail": ""
         },
+        "api_54": {
+            "name": "AV-JKUN资源",
+            "api": "https://jkunzyapi.com/api.php/provide/vod",
+            "detail": "https://jkunzyapi.com"
+        },
         "api_55": {
             "name": "AV-souav资源",
             "api": "https://api.souavzy.vip/api.php/provide/vod",
