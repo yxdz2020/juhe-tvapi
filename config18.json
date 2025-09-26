@@ -136,12 +136,6 @@
             "detail": "https://thzy8.me",
             "is_adult": true
         },
-        "yyzy": {
-            "name": "AV-优优资源",
-            "api": "https://www.yyzywcj.com/api.php/provide/vod",
-            "detail": "https://www.yyzywcj.com",
-            "is_adult": true
-        },
         "hsckzy": {
             "name": "AV-黄色仓库",
             "api": "https://hsckzy.xyz/api.php/provide/vod",
