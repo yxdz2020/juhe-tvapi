@@ -260,8 +260,8 @@
             "name": "金鹰资源采集网"
         },
         "aqyzy": {
-            "api": "https://iqiyizyapi.com/api.php/provide/vod",
             "name": "TV-爱奇艺",
+            "api": "https://iqiyizyapi.com/api.php/provide/vod",
             "detail": "https://iqiyizyapi.com",
             "is_adult": false
         },
@@ -272,20 +272,20 @@
             "is_adult": false
         },
         "1080y": {
-            "api": "https://api.yzzy-api.com/inc/apijson.php",
             "name": "TV-优质资源",
+            "api": "https://api.yzzy-api.com/inc/apijson.php",
             "detail": "https://1080zyk4.com",
             "is_adult": false
         },
         "myzy": {
-            "api": "https://api.maoyanapi.top/api.php/provide/vod",
             "name": "TV-猫眼资源",
+            "api": "https://api.maoyanapi.top/api.php/provide/vod",
             "detail": "https://www.maoyanzy.com",
             "is_adult": false
         },
         "lzcaiji": {
-            "api": "https://cj.lzcaiji.com/api.php/provide/vod",
             "name": "TV-量子资源",
+            "api": "https://cj.lzcaiji.com/api.php/provide/vod",
             "detail": "https://cj.lzcaiji.com",
             "is_adult": false
         },

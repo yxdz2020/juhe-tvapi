@@ -149,8 +149,8 @@
             "is_adult": true
         },
         "dnzzy": {
-            "api": "https://apidanaizi.com/api.php/provide/vod",
             "name": "AV-大奶子",
+            "api": "https://apidanaizi.com/api.php/provide/vod",
             "detail": "https://apidanaizi.com",
             "is_adult": true
         },
@@ -191,8 +191,8 @@
             "is_adult": true
         },
         "swzy": {
-            "api": "https://siwazyw.tv/api.php/provide/vod",
             "name": "AV-丝袜资源",
+            "api": "https://siwazyw.tv/api.php/provide/vod",
             "detail": "https://siwazyw.tv",
             "is_adult": true
         }
