@@ -130,70 +130,16 @@
             "api": "https://api.xiaojizy.live/provide/vod",
             "name": "小鸡资源"
         },
-        "thzy": {
-            "name": "AV-桃花资源",
-            "api": "https://thzy1.me/api.php/provide/vod",
-            "detail": "https://thzy8.me",
-            "is_adult": true
-        },
-        "yyzy": {
-            "name": "AV-优优资源",
-            "api": "https://www.yyzywcj.com/api.php/provide/vod",
-            "detail": "https://www.yyzywcj.com",
-            "is_adult": true
-        },
         "hsckzy": {
-            "name": "AV-黄色仓库",
+            "name": "🔞黄色仓库",
             "api": "https://hsckzy.xyz/api.php/provide/vod",
             "detail": "hsckzy.xyz",
             "is_adult": true
         },
-        "dnzzy": {
-            "name": "AV-大奶子",
-            "api": "https://apidanaizi.com/api.php/provide/vod",
-            "detail": "https://apidanaizi.com",
-            "is_adult": true
-        },
         "slapibf": {
-            "name": "AV-森林资源",
+            "name": "🔞森林资源",
             "api": "https://beiyong.slapibf.com/api.php/provide/vod",
             "detail": "https://slapibf.com",
-            "is_adult": true
-        },
-        "semaozy": {
-            "name": "AV-色猫资源",
-            "api": "https://caiji.semaozy.net/inc/apijson_vod.php",
-            "detail": "https://semaozy1.com/",
-            "is_adult": true
-        },
-        "xzybb21": {
-            "name": "AV-幸资源",
-            "api": "https://xzybb2.com/api.php/provide/vod",
-            "detail": "https://xzytv.com",
-            "is_adult": true
-        },
-        "zuiseapi": {
-            "name": "AV-最色资源",
-            "api": "https://api.zuiseapi.com/api.php/provide/vod",
-            "detail": "https://zuisezy.com",
-            "is_adult": true
-        },
-        "douapi": {
-            "name": "AV-豆豆资源",
-            "api": "https://api.douapi.cc/api.php/provide/vod",
-            "detail": "https://doudouzy.com",
-            "is_adult": true
-        },
-        "xzybb2": {
-            "name": "AV-滴滴资源",
-            "api": "https://api.ddapi.cc/api.php/provide/vod",
-            "detail": "https://didizy.com",
-            "is_adult": true
-        },
-        "swzy": {
-            "name": "AV-丝袜资源",
-            "api": "https://siwazyw.tv/api.php/provide/vod",
-            "detail": "https://siwazyw.tv",
             "is_adult": true
         }
     }
