@@ -133,14 +133,12 @@
         "hsckzy": {
             "name": "🔞黄色仓库",
             "api": "https://hsckzy.xyz/api.php/provide/vod",
-            "detail": "hsckzy.xyz",
-            "is_adult": true
+            "detail": "hsckzy.xyz"
         },
         "slapibf": {
             "name": "🔞森林资源",
             "api": "https://beiyong.slapibf.com/api.php/provide/vod",
-            "detail": "https://slapibf.com",
-            "is_adult": true
+            "detail": "https://slapibf.com"
         }
     }
 }
