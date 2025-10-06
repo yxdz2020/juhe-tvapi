@@ -318,51 +318,6 @@
             "name": "🎬U酷88",
             "api": "https://dl.hafrey.dpdns.org/?url=https://api.ukuapi88.com/api.php/provide/vod",
             "detail": "https://api.ukuapi88.com"
-        },
-        "thzy": {
-            "name": "🔞桃花资源",
-            "api": "https://thzy1.me/api.php/provide/vod",
-            "detail": "https://thzy8.me"
-        },
-        "yyzy": {
-            "name": "🔞优优资源",
-            "api": "https://www.yyzywcj.com/api.php/provide/vod",
-            "detail": "https://www.yyzywcj.com"
-        },
-        "dnzzy": {
-            "name": "🔞大奶子",
-            "api": "https://apidanaizi.com/api.php/provide/vod",
-            "detail": "https://apidanaizi.com"
-        },
-        "semaozy": {
-            "name": "🔞色猫资源",
-            "api": "https://caiji.semaozy.net/inc/apijson_vod.php/provide/vod",
-            "detail": "https://semaozy1.com"
-        },
-        "xzybb21": {
-            "name": "🔞幸资源",
-            "api": "https://xzybb2.com/api.php/provide/vod",
-            "detail": "https://xzytv.com"
-        },
-        "zuiseapi": {
-            "name": "🔞最色资源",
-            "api": "https://api.zuiseapi.com/api.php/provide/vod",
-            "detail": "https://zuisezy.com"
-        },
-        "douapi": {
-            "name": "🔞豆豆资源",
-            "api": "https://api.douapi.cc/api.php/provide/vod",
-            "detail": "https://doudouzy.com"
-        },
-        "xzybb2": {
-            "name": "🔞滴滴资源",
-            "api": "https://api.ddapi.cc/api.php/provide/vod",
-            "detail": "https://didizy.com"
-        },
-        "swzy": {
-            "name": "🔞丝袜资源",
-            "api": "https://siwazyw.tv/api.php/provide/vod/at/json",
-            "detail": "https://siwazyw.tv"
         }
     }
 }
