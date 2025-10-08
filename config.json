@@ -286,12 +286,12 @@
         },
         "ruyi": {
             "name": "🎬如意资源",
-            "api": "https://dl.hafrey.dpdns.org/?url=https://cj.rycjapi.com/api.php/provide/vod",
+            "api": "https://jjpz.hafrey.dpdns.org/?url=https://cj.rycjapi.com/api.php/provide/vod",
             "detail": "https://www.ryzyw.com"
         },
         "mozhuazy": {
             "name": "🎬魔爪资源",
-            "api": "https://dl.hafrey.dpdns.org/?url=https://mozhuazy.com/api.php/provide/vod",
+            "api": "https://jjpz.hafrey.dpdns.org/?url=https://mozhuazy.com/api.php/provide/vod",
             "detail": "https://mozhuazy.com"
         },
         "zuidazy": {
@@ -311,12 +311,12 @@
         },
         "uku": {
             "name": "🎬U酷资源",
-            "api": "https://dl.hafrey.dpdns.org/?url=https://api.ukuapi.com/api.php/provide/vod",
+            "api": "https://jjpz.hafrey.dpdns.org/?url=https://api.ukuapi.com/api.php/provide/vod",
             "detail": "https://api.ukuapi.com"
         },
         "ukuapi88": {
             "name": "🎬U酷88",
-            "api": "https://dl.hafrey.dpdns.org/?url=https://api.ukuapi88.com/api.php/provide/vod",
+            "api": "https://jjpz.hafrey.dpdns.org/?url=https://api.ukuapi88.com/api.php/provide/vod",
             "detail": "https://api.ukuapi88.com"
         }
     }
