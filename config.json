@@ -27,6 +27,10 @@
             "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
             "name": "茅台资源"
         },
+        "wolong": {
+            "api": "https://wolongzyw.com/api.php/provide/vod",
+            "name": "卧龙资源"
+        },
         "jisu": {
             "api": "https://jszyapi.com/api.php/provide/vod",
             "name": "极速资源",
@@ -98,6 +102,16 @@
             "api": "https://api.guangsuapi.com/api.php/provide/vod",
             "name": "光速资源",
             "detail": "https://api.guangsuapi.com"
+        },
+        "tvwolong1": {
+            "api": "https://collect.wolongzyw.com/api.php/provide/vod",
+            "name": "卧龙点播",
+            "detail": "https://collect.wolongzyw.com"
+        },
+        "tvwolong2": {
+            "api": "https://collect.wolongzy.cc/api.php/provide/vod",
+            "name": "卧龙资源",
+            "detail": ""
         },
         "tvxinlang": {
             "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
