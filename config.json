@@ -250,11 +250,6 @@
             "api": "https://cj.lziapi.com/api.php/provide/vod/",
             "name": "影视工厂"
         },
-        "api_15": {
-            "name": "TV-如意资源",
-            "api": "https://cj.rycjapi.com/api.php/provide/vod",
-            "detail": ""
-        },
         "jinyingziyuan": {
             "api": "https://jyzyapi.com/provide/vod",
             "name": "金鹰资源采集网"
