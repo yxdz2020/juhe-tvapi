@@ -23,10 +23,6 @@
             "api": "https://360zy.com/api.php/provide/vod",
             "name": "360资源"
         },
-        "maotaizy": {
-            "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
-            "name": "茅台资源"
-        },
         "wolong": {
             "api": "https://wolongzyw.com/api.php/provide/vod",
             "name": "卧龙资源"
@@ -249,6 +245,11 @@
         "yingshigongchang": {
             "api": "https://cj.lziapi.com/api.php/provide/vod/",
             "name": "影视工厂"
+        },
+        "api_15": {
+            "name": "TV-如意资源",
+            "api": "https://cj.rycjapi.com/api.php/provide/vod",
+            "detail": ""
         },
         "jinyingziyuan": {
             "api": "https://jyzyapi.com/provide/vod",
