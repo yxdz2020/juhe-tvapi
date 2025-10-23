@@ -318,6 +318,16 @@
             "name": "🎬U酷88",
             "api": "https://jjpz.hafrey.dpdns.org/?url=https://api.ukuapi88.com/api.php/provide/vod",
             "detail": "https://api.ukuapi88.com"
+        },
+        "shzy": {
+            "name": "🎬山海资源",
+            "api": "https://zy.sh0o.cn/api.php/provide/vod",
+            "detail": "https://zy.sh0o.cn"
+        },
+        "jazy": {
+            "name": "🎬建安资源",
+            "api": "http://154.219.117.232:9981/jacloudapi.php/provide/vod",
+            "detail": "http://154.219.117.232:9981"
         }
     }
 }
