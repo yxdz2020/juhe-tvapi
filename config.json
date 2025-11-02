@@ -78,6 +78,16 @@
             "name": "CK资源",
             "detail": "https://ckzy.me"
         },
+        "tvuku1": {
+            "api": "https://api.ukuapi.com/api.php/provide/vod",
+            "name": "U酷资源",
+            "detail": "https://api.ukuapi.com"
+        },
+        "tvuku2": {
+            "api": "https://api.ukuapi88.com/api.php/provide/vod",
+            "name": "U酷资源2",
+            "detail": "https://api.ukuapi88.com"
+        },
         "tvwujin1": {
             "api": "https://api.wujinapi.cc/api.php/provide/vod",
             "name": "wujinapi无尽",
@@ -293,6 +303,16 @@
             "name": "🎬金鹰资源",
             "api": "https://jyzyapi.com/provide/vod/from/jinyingyun/at/json",
             "detail": "https://jinyingzy.net"
+        },
+        "uku": {
+            "name": "🎬U酷资源",
+            "api": "https://jjpz.hafrey.dpdns.org/?url=https://api.ukuapi.com/api.php/provide/vod",
+            "detail": "https://api.ukuapi.com"
+        },
+        "ukuapi88": {
+            "name": "🎬U酷88",
+            "api": "https://jjpz.hafrey.dpdns.org/?url=https://api.ukuapi88.com/api.php/provide/vod",
+            "detail": "https://api.ukuapi88.com"
         },
         "shzy": {
             "name": "🎬山海资源",
