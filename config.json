@@ -254,67 +254,52 @@
             "api": "https://jyzyapi.com/provide/vod",
             "name": "金鹰资源采集网"
         },
-        "aqyzy": {
-            "name": "🎬爱奇艺",
+        "iqiyizyapi.com": {
+            "name": "🎬-爱奇艺-",
             "api": "https://iqiyizyapi.com/api.php/provide/vod",
             "detail": "https://iqiyizyapi.com"
         },
-        "caijidb": {
+        "dbzy.tv": {
             "name": "🎬豆瓣资源",
             "api": "https://caiji.dbzy5.com/api.php/provide/vod",
             "detail": "dbzy.tv"
         },
-        "1080y": {
+        "1080zyk4.com": {
             "name": "🎬优质资源",
             "api": "https://api.yzzy-api.com/inc/apijson.php",
             "detail": "https://1080zyk4.com"
         },
-        "myzy": {
+        "www.maoyanzy.com": {
             "name": "🎬猫眼资源",
             "api": "https://api.maoyanapi.top/api.php/provide/vod",
             "detail": "https://www.maoyanzy.com"
         },
-        "lzcaiji": {
+        "cj.lzcaiji.com": {
             "name": "🎬量子资源",
             "api": "https://cj.lzcaiji.com/api.php/provide/vod",
             "detail": "https://cj.lzcaiji.com"
         },
-        "ruyi": {
+        "www.ryzyw.com": {
             "name": "🎬如意资源",
             "api": "https://jjpz.hafrey.dpdns.org/?url=https://cj.rycjapi.com/api.php/provide/vod",
             "detail": "https://www.ryzyw.com"
         },
-        "zuidazy": {
+        "zuidazy.co": {
             "name": "🎬最大点播",
             "api": "https://zuidazy.me/api.php/provide/vod",
             "detail": "https://zuidazy.co"
         },
-        "hhzyapi": {
+        "www.haohuazy.com": {
             "name": "🎬豪华资源",
             "api": "https://jjpz.hafrey.dpdns.org/?url=https://hhzyapi.com/api.php/provide/vod",
             "detail": "https://www.haohuazy.com"
         },
-        "huyaapi": {
-            "name": "🎬虎牙资源",
-            "api": "https://www.huyaapi.com/api.php/provide/vod/at/json",
-            "detail": "https://www.huyaapi.com"
-        },
-        "jyzyapi": {
+        "jinyingzy.net": {
             "name": "🎬金鹰资源",
             "api": "https://jyzyapi.com/provide/vod/from/jinyingyun/at/json",
             "detail": "https://jinyingzy.net"
         },
-        "uku": {
-            "name": "🎬U酷资源",
-            "api": "https://jjpz.hafrey.dpdns.org/?url=https://api.ukuapi.com/api.php/provide/vod",
-            "detail": "https://api.ukuapi.com"
-        },
-        "ukuapi88": {
-            "name": "🎬U酷88",
-            "api": "https://jjpz.hafrey.dpdns.org/?url=https://api.ukuapi88.com/api.php/provide/vod",
-            "detail": "https://api.ukuapi88.com"
-        },
-        "shzy": {
+        "zy.sh0o.cn": {
             "name": "🎬山海资源",
             "api": "https://zy.sh0o.cn/api.php/provide/vod",
             "detail": "https://zy.sh0o.cn"
@@ -323,6 +308,16 @@
             "name": "🎬建安资源",
             "api": "http://154.219.117.232:9981/jacloudapi.php/provide/vod",
             "detail": "http://154.219.117.232:9981"
+        },
+        "www.huyaapi.com": {
+            "name": "🎬虎牙资源",
+            "api": "https://www.huyaapi.com/api.php/provide/vod/at/json",
+            "detail": "https://www.huyaapi.com"
+        },
+        "xiangjiaozyw.com": {
+            "name": "🔞香蕉资源",
+            "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
+            "detail": "https://www.xiangjiaozyw.com"
         }
     }
 }
