@@ -314,6 +314,11 @@
             "api": "https://www.huyaapi.com/api.php/provide/vod/at/json",
             "detail": "https://www.huyaapi.com"
         },
+        "bdzy1.com": {
+            "name": "🎬百度云zy",
+            "api": "https://jjpz.hafrey.dpdns.org/?url=https://api.apibdzy.com/api.php/provide/vod",
+            "detail": "https://bdzy1.com"
+        },
         "xiangjiaozyw.com": {
             "name": "🔞香蕉资源",
             "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
