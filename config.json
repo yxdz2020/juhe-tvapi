@@ -289,11 +289,6 @@
             "api": "https://zuidazy.me/api.php/provide/vod",
             "detail": "https://zuidazy.co"
         },
-        "www.haohuazy.com": {
-            "name": "🎬豪华资源",
-            "api": "https://jjpz.hafrey.dpdns.org/?url=https://hhzyapi.com/api.php/provide/vod",
-            "detail": "https://www.haohuazy.com"
-        },
         "jinyingzy.net": {
             "name": "🎬金鹰资源",
             "api": "https://jyzyapi.com/provide/vod/from/jinyingyun/at/json",
