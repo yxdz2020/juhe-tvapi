@@ -176,19 +176,19 @@
             "api": "https://api.ddapi.cc/api.php/provide/vod",
             "detail": "https://didizy.com"
         },
+        "xingba111.com": {
+            "name": "🔞杏吧资源",
+            "api": "https://pz.168188.dpdns.org/?url=https://xingba222.com/api.php/provide/vod",
+            "detail": "https://xingba111.com"
+        },
         "semaozy1.com": {
             "name": "🔞色猫资源",
             "api": "https://caiji.semaozy.net/inc/apijson_vod.php/provide/vod",
             "detail": "https://semaozy1.com"
         },
-        "xingba111.com": {
-            "name": "🔞杏吧资源",
-            "api": "https://jjpz.hafrey.dpdns.org/?url=https://xingba111.com/api.php/provide/vod",
-            "detail": "https://xingba111.com"
-        },
         "siwazyw.tv": {
             "name": "🔞丝袜资源",
-            "api": "https://siwazyw.tv/api.php/provide/vod/at/json",
+            "api": "https://siwazyw.tv/api.php/provide/vod",
             "detail": "https://siwazyw.tv"
         }
     }
