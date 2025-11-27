@@ -93,6 +93,11 @@
             "name": "wujinapi无尽",
             "detail": ""
         },
+        "tvyaya": {
+            "api": "https://cj.yayazy.net/api.php/provide/vod",
+            "name": "丫丫点播",
+            "detail": "https://cj.yayazy.net"
+        },
         "tvguangsu": {
             "api": "https://api.guangsuapi.com/api.php/provide/vod",
             "name": "光速资源",
@@ -274,6 +279,11 @@
             "api": "https://zuidazy.me/api.php/provide/vod",
             "detail": "https://zuidazy.co"
         },
+        "zy.jinchancaiji.com": {
+            "name": "🎬金蝉影视",
+            "api": "https://zy.jinchancaiji.com/api.php/provide/vod",
+            "detail": "https://zy.jinchancaiji.com"
+        },
         "www.ryzyw.com": {
             "name": "🎬如意资源",
             "api": "https://pz.168188.dpdns.org/?url=https://cj.rycjapi.com/api.php/provide/vod",
@@ -295,9 +305,15 @@
             "detail": "https://zy.sh0o.cn"
         },
         "1080zyk4.com": {
+            "_comment": "JSON 里所有中文字符为 Unicode 编码",
             "name": "🎬优质资源",
             "api": "https://api.yzzy-api.com/inc/apijson.php",
             "detail": "https://1080zyk4.com"
+        },
+        "heiliaozy.cc": {
+            "name": "🔞黑料资源",
+            "api": "https://www.heiliaozyapi.com/api.php/provide/vod",
+            "detail": "https://heiliaozy.cc"
         },
         "xiangjiaozyw.com": {
             "name": "🔞香蕉资源",
