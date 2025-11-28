@@ -274,16 +274,6 @@
             "api": "https://cj.lzcaiji.com/api.php/provide/vod",
             "detail": "https://cj.lzcaiji.com"
         },
-        "zuidazy.co": {
-            "name": "🎬最大点播",
-            "api": "https://zuidazy.me/api.php/provide/vod",
-            "detail": "https://zuidazy.co"
-        },
-        "zy.jinchancaiji.com": {
-            "name": "🎬金蝉影视",
-            "api": "https://zy.jinchancaiji.com/api.php/provide/vod",
-            "detail": "https://zy.jinchancaiji.com"
-        },
         "www.ryzyw.com": {
             "name": "🎬如意资源",
             "api": "https://pz.168188.dpdns.org/?url=https://cj.rycjapi.com/api.php/provide/vod",
@@ -300,9 +290,22 @@
             "detail": "https://bdzy1.com"
         },
         "zy.sh0o.cn": {
+            "_comment": "无搜索结果",
             "name": "🎬山海资源",
             "api": "https://zy.sh0o.cn/api.php/provide/vod",
             "detail": "https://zy.sh0o.cn"
+        },
+        "zy.jinchancaiji.com": {
+            "_comment": "无搜索结果",
+            "name": "🎬金蝉影视",
+            "api": "https://zy.jinchancaiji.com/api.php/provide/vod",
+            "detail": "https://zy.jinchancaiji.com"
+        },
+        "zuidazy.co": {
+            "_comment": "备用",
+            "name": "🎬最大点播",
+            "api": "https://zuidazy.me/api.php/provide/vod",
+            "detail": "https://zuidazy.co"
         },
         "1080zyk4.com": {
             "_comment": "JSON 里所有中文字符为 Unicode 编码",
@@ -316,6 +319,7 @@
             "detail": "https://heiliaozy.cc"
         },
         "xiangjiaozyw.com": {
+            "_comment": "无搜索结果",
             "name": "🔞香蕉资源",
             "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
             "detail": "https://www.xiangjiaozyw.com"
