@@ -295,6 +295,12 @@
             "api": "https://zy.sh0o.cn/api.php/provide/vod",
             "detail": "https://zy.sh0o.cn"
         },
+        "zy.jinchancaiji.com": {
+            "_comment": "无搜索结果",
+            "name": "🎬金蝉影视",
+            "api": "https://zy.jinchancaiji.com/api.php/provide/vod",
+            "detail": "https://zy.jinchancaiji.com"
+        },
         "zuidazy.co": {
             "_comment": "备用",
             "name": "🎬最大点播",
