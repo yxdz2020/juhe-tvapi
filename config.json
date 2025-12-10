@@ -317,17 +317,6 @@
             "name": "🎬优质资源",
             "api": "https://api.yzzy-api.com/inc/apijson.php",
             "detail": "https://1080zyk4.com"
-        },
-        "heiliaozy.cc": {
-            "name": "🔞黑料资源",
-            "api": "https://www.heiliaozyapi.com/api.php/provide/vod",
-            "detail": "https://heiliaozy.cc"
-        },
-        "xiangjiaozyw.com": {
-            "_comment": "无搜索结果",
-            "name": "🔞香蕉资源",
-            "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
-            "detail": "https://www.xiangjiaozyw.com"
         }
     }
 }

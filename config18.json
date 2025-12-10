@@ -166,6 +166,17 @@
             "api": "https://api.ddapi.cc/api.php/provide/vod",
             "detail": "https://didizy.com"
         },
+        "heiliaozy.cc": {
+            "name": "🔞黑料资源",
+            "api": "https://www.heiliaozyapi.com/api.php/provide/vod",
+            "detail": "https://heiliaozy.cc"
+        },
+        "xiangjiaozyw.com": {
+            "_comment": "无搜索结果",
+            "name": "🔞香蕉资源",
+            "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
+            "detail": "https://www.xiangjiaozyw.com"
+        },
         "xingba111.com": {
             "_comment": "403 Forbidden",
             "name": "🔞杏吧资源",
