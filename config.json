@@ -216,11 +216,6 @@
             "api": "https://xsd.sdzyapi.com/api.php/provide/vod",
             "name": "索尼-闪电资源"
         },
-        "csp_AppYsV2": {
-            "api": "https://len.tv/api.php/v1.vod",
-            "name": "冷视TV(普)",
-            "detail": "https://len.tv"
-        },
         "量子资源": {
             "api": "http://cj.lziapi.com/api.php/provide/vod",
             "name": "量子资源"
