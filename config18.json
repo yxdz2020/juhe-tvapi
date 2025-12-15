@@ -42,11 +42,6 @@
             "api": "https://jkunzyapi.com/api.php/provide/vod",
             "detail": "https://jkunzyapi.com"
         },
-        "api_55": {
-            "name": "AV-souav资源",
-            "api": "https://api.souavzy.vip/api.php/provide/vod",
-            "detail": "https://api.souavzy.vip"
-        },
         "api_56": {
             "name": "AV-乐播资源",
             "api": "https://lbapi9.com/api.php/provide/vod",
