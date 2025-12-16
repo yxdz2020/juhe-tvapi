@@ -69,11 +69,6 @@
             "name": "1080资源",
             "detail": "https://api.1080zyku.com"
         },
-        "tvckzy": {
-            "api": "https://ckzy.me/api.php/provide/vod",
-            "name": "CK资源",
-            "detail": "https://ckzy.me"
-        },
         "tvuku1": {
             "api": "https://api.ukuapi.com/api.php/provide/vod",
             "name": "U酷资源",
@@ -164,11 +159,6 @@
             "name": "虎牙资源",
             "detail": "https://www.huyaapi.com"
         },
-        "tvdb1": {
-            "api": "https://caiji.dbzy.tv/api.php/provide/vod",
-            "name": "豆瓣资源",
-            "detail": "https://caiji.dbzy.tv"
-        },
         "tvsubo": {
             "api": "https://subocaiji.com/api.php/provide/vod",
             "name": "速博资源",
@@ -245,16 +235,6 @@
             "api": "https://jyzyapi.com/provide/vod",
             "name": "金鹰资源采集网"
         },
-        "iqiyizyapi.com": {
-            "name": "🎬-爱奇艺-",
-            "api": "https://iqiyizyapi.com/api.php/provide/vod",
-            "detail": "https://iqiyizyapi.com"
-        },
-        "dbzy.tv": {
-            "name": "🎬豆瓣资源",
-            "api": "https://caiji.dbzy5.com/api.php/provide/vod",
-            "detail": "https://dbzy.tv"
-        },
         "www.maoyanzy.com": {
             "name": "🎬猫眼资源",
             "api": "https://api.maoyanapi.top/api.php/provide/vod",
@@ -264,6 +244,11 @@
             "name": "🎬量子资源",
             "api": "https://cj.lzcaiji.com/api.php/provide/vod",
             "detail": "https://cj.lzcaiji.com"
+        },
+        "360zy.com": {
+            "name": "🎬360 资源",
+            "api": "https://360zyzz.com/api.php/provide/vod",
+            "detail": "https://360zy.com"
         },
         "www.ryzyw.com": {
             "name": "🎬如意资源",

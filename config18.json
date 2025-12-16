@@ -22,11 +22,6 @@
             "api": "https://155api.com/api.php/provide/vod",
             "detail": "https://155api.com"
         },
-        "api_30": {
-            "name": "AV-百万资源",
-            "api": "https://api.bwzyz.com/api.php/provide/vod",
-            "detail": "https://api.bwzyz.com"
-        },
         "api_52": {
             "name": "AV-91麻豆",
             "api": "https://91md.me/api.php/provide/vod",
@@ -77,11 +72,6 @@
             "api": "https://www.kxgav.com/api/json.php",
             "detail": "https://www.kxgav.com"
         },
-        "api_64": {
-            "name": "AV-精品资源",
-            "api": "https://www.jingpinx.com/api.php/provide/vod",
-            "detail": "https://www.jingpinx.com"
-        },
         "api_65": {
             "name": "AV-美少女资源",
             "api": "https://www.msnii.com/api/json.php",
@@ -120,11 +110,6 @@
             "name": "🔞91-精品-",
             "api": "https://91jpzyw.com/api.php/provide/vod",
             "detail": "https://91jpzyw.com"
-        },
-        "thzy8.me": {
-            "name": "🔞桃花资源",
-            "api": "https://thzy1.me/api.php/provide/vod",
-            "detail": "https://thzy8.me"
         },
         "www.yyzywcj.com": {
             "name": "🔞优优资源",
