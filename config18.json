@@ -72,6 +72,11 @@
             "api": "https://www.kxgav.com/api/json.php",
             "detail": "https://www.kxgav.com"
         },
+        "api_64": {
+            "name": "AV-精品资源",
+            "api": "https://www.jingpinx.com/api.php/provide/vod",
+            "detail": "https://www.jingpinx.com"
+        },
         "api_65": {
             "name": "AV-美少女资源",
             "api": "https://www.msnii.com/api/json.php",
@@ -150,6 +155,12 @@
             "name": "🔞黑料资源",
             "api": "https://www.heiliaozyapi.com/api.php/provide/vod",
             "detail": "https://heiliaozy.cc"
+        },
+        "thzy8.me": {
+            "_comment": "HTTP 502",
+            "name": "🔞桃花资源",
+            "api": "https://thzy1.me/api.php/provide/vod",
+            "detail": "https://thzy8.me"
         },
         "xiangjiaozyw.com": {
             "_comment": "无搜索结果",

@@ -69,6 +69,11 @@
             "name": "1080资源",
             "detail": "https://api.1080zyku.com"
         },
+        "tvckzy": {
+            "api": "https://ckzy.me/api.php/provide/vod",
+            "name": "CK资源",
+            "detail": "https://ckzy.me"
+        },
         "tvuku1": {
             "api": "https://api.ukuapi.com/api.php/provide/vod",
             "name": "U酷资源",
