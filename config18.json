@@ -9,10 +9,6 @@
             "api": "https://slapibf.com/api.php/provide/vod",
             "name": "森林资源"
         },
-        "huangseziy": {
-            "api": "https://hsckzy888.com/api.php/provide/vod",
-            "name": "黄色资源啊啊"
-        },
         "xibaocaiji": {
             "api": "https://www.xxibaozyw.com/api.php/provide/vod",
             "name": "细胞采集黄色"
@@ -21,6 +17,11 @@
             "name": "AV-155资源",
             "api": "https://155api.com/api.php/provide/vod",
             "detail": "https://155api.com"
+        },
+        "api_30": {
+            "name": "AV-百万资源",
+            "api": "https://api.bwzyz.com/api.php/provide/vod",
+            "detail": "https://api.bwzyz.com"
         },
         "api_52": {
             "name": "AV-91麻豆",

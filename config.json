@@ -32,10 +32,6 @@
             "name": "极速资源",
             "detail": "https://jszyapi.com"
         },
-        "dbzy": {
-            "api": "https://dbzy.tv/api.php/provide/vod",
-            "name": "豆瓣资源"
-        },
         "mdzy": {
             "api": "https://www.mdzyapi.com/api.php/provide/vod",
             "name": "魔都资源"
@@ -239,6 +235,11 @@
         "jinyingziyuan": {
             "api": "https://jyzyapi.com/provide/vod",
             "name": "金鹰资源采集网"
+        },
+        "iqiyizyapi.com": {
+            "name": "🎬-爱奇艺-",
+            "api": "https://iqiyizyapi.com/api.php/provide/vod",
+            "detail": "https://iqiyizyapi.com"
         },
         "www.maoyanzy.com": {
             "name": "🎬猫眼资源",
