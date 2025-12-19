@@ -32,6 +32,10 @@
             "name": "极速资源",
             "detail": "https://jszyapi.com"
         },
+        "dbzy": {
+            "api": "https://dbzy.tv/api.php/provide/vod",
+            "name": "豆瓣资源"
+        },
         "mdzy": {
             "api": "https://www.mdzyapi.com/api.php/provide/vod",
             "name": "魔都资源"
@@ -160,6 +164,11 @@
             "name": "虎牙资源",
             "detail": "https://www.huyaapi.com"
         },
+        "tvdb1": {
+            "api": "https://caiji.dbzy.tv/api.php/provide/vod",
+            "name": "豆瓣资源",
+            "detail": "https://caiji.dbzy.tv"
+        },
         "tvsubo": {
             "api": "https://subocaiji.com/api.php/provide/vod",
             "name": "速博资源",
@@ -240,6 +249,11 @@
             "name": "🎬-爱奇艺-",
             "api": "https://iqiyizyapi.com/api.php/provide/vod",
             "detail": "https://iqiyizyapi.com"
+        },
+        "dbzy.tv": {
+            "name": "🎬豆瓣资源",
+            "api": "https://caiji.dbzy5.com/api.php/provide/vod",
+            "detail": "https://dbzy.tv"
         },
         "www.maoyanzy.com": {
             "name": "🎬猫眼资源",
