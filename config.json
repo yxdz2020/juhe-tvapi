@@ -19,6 +19,10 @@
             "name": "非凡影视",
             "detail": "http://ffzy5.tv"
         },
+        "zy360": {
+            "api": "https://360zy.com/api.php/provide/vod",
+            "name": "360资源"
+        },
         "maotaizy": {
             "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
             "name": "茅台资源"
@@ -245,10 +249,20 @@
             "api": "https://jyzyapi.com/provide/vod",
             "name": "金鹰资源采集网"
         },
+        "iqiyizyapi.com": {
+            "name": "🎬-爱奇艺-",
+            "api": "https://iqiyizyapi.com/api.php/provide/vod",
+            "detail": "https://iqiyizyapi.com"
+        },
         "dbzy.tv": {
             "name": "🎬豆瓣资源",
             "api": "https://caiji.dbzy5.com/api.php/provide/vod",
             "detail": "https://dbzy.tv"
+        },
+        "www.maoyanzy.com": {
+            "name": "🎬猫眼资源",
+            "api": "https://api.maoyanapi.top/api.php/provide/vod",
+            "detail": "https://www.maoyanzy.com"
         },
         "cj.lzcaiji.com": {
             "name": "🎬量子资源",
