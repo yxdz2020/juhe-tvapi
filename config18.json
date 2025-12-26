@@ -62,11 +62,6 @@
             "api": "https://www.xrbsp.com/api/json.php",
             "detail": "https://www.xrbsp.com"
         },
-        "api_61": {
-            "name": "AV-玉兔资源",
-            "api": "https://apiyutu.com/api.php/provide/vod",
-            "detail": "https://apiyutu.com"
-        },
         "api_62": {
             "name": "AV-番号资源",
             "api": "http://fhapi9.com/api.php/provide/vod",
@@ -86,11 +81,6 @@
             "name": "AV-美少女资源",
             "api": "https://www.msnii.com/api/json.php",
             "detail": "https://www.msnii.com"
-        },
-        "api_66": {
-            "name": "AV-老色逼资源",
-            "api": "https://apilsbzy1.com/api.php/provide/vod",
-            "detail": "https://apilsbzy1.com"
         },
         "api_69": {
             "name": "AV-辣椒资源",
@@ -141,6 +131,11 @@
             "api": "https://beiyong.slapibf.com/api.php/provide/vod",
             "detail": "https://slapibf.com"
         },
+        "apilj.com": {
+            "name": "🔞辣椒资源",
+            "api": "https://pz.168188.dpdns.org/?url=https://apilj.com/api.php/provide/vod",
+            "detail": "https://apilj.com"
+        },
         "xzytv.com": {
             "name": "🔞-幸资源-",
             "api": "https://xzybb2.com/api.php/provide/vod",
@@ -165,6 +160,11 @@
             "name": "🔞桃花资源",
             "api": "https://thzy1.me/api.php/provide/vod",
             "detail": "https://thzy8.me"
+        },
+        "souavzyw.com": {
+            "name": "🔞souavZY",
+            "api": "https://api.souavzyw.net/api.php/provide/vod",
+            "detail": "souavzyw.com"
         },
         "xiangjiaozyw.com": {
             "_comment": "无搜索结果",
