@@ -173,6 +173,11 @@
             "name": "豆瓣资源",
             "detail": "https://caiji.dbzy.tv"
         },
+        "tvhhzy": {
+            "api": "https://hhzyapi.com/api.php/provide/vod",
+            "name": "豪华资源",
+            "detail": "https://hhzyapi.com"
+        },
         "tvsubo": {
             "api": "https://subocaiji.com/api.php/provide/vod",
             "name": "速博资源",
