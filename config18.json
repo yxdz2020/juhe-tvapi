@@ -87,6 +87,11 @@
             "api": "https://www.msnii.com/api/json.php",
             "detail": "https://www.msnii.com"
         },
+        "api_66": {
+            "name": "AV-老色逼资源",
+            "api": "https://apilsbzy1.com/api.php/provide/vod",
+            "detail": "https://apilsbzy1.com"
+        },
         "api_69": {
             "name": "AV-辣椒资源",
             "api": "https://apilj.com/api.php/provide/vod",

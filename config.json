@@ -183,16 +183,6 @@
             "name": "速博资源",
             "detail": ""
         },
-        "tvjinying1": {
-            "api": "https://jinyingzy.com/api.php/provide/vod",
-            "name": "金鹰点播",
-            "detail": "https://jinyingzy.com"
-        },
-        "tvjinying2": {
-            "api": "https://jyzyapi.com/api.php/provide/vod",
-            "name": "金鹰资源",
-            "detail": "https://jyzyapi.com"
-        },
         "tvsdzy": {
             "api": "https://sdzyapi.com/api.php/provide/vod",
             "name": "閃電资源",
