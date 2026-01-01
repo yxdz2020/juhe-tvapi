@@ -5,6 +5,10 @@
             "api": "https://xingba111.com/api.php/provide/vod",
             "name": "杏吧资源"
         },
+        "senlinziyuan": {
+            "api": "https://slapibf.com/api.php/provide/vod",
+            "name": "森林资源"
+        },
         "huangseziy": {
             "api": "https://hsckzy888.com/api.php/provide/vod",
             "name": "黄色资源啊啊"
@@ -27,6 +31,11 @@
             "name": "AV-91麻豆",
             "api": "https://91md.me/api.php/provide/vod",
             "detail": "https://91md.me"
+        },
+        "api_53": {
+            "name": "AV-AIvin",
+            "api": "http://lbapiby.com/api.php/provide/vod",
+            "detail": ""
         },
         "api_54": {
             "name": "AV-JKUN资源",

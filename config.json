@@ -163,6 +163,11 @@
             "name": "红牛资源",
             "detail": "https://www.hongniuzy2.com"
         },
+        "tvhuya": {
+            "api": "https://www.huyaapi.com/api.php/provide/vod",
+            "name": "虎牙资源",
+            "detail": "https://www.huyaapi.com"
+        },
         "tvdb1": {
             "api": "https://caiji.dbzy.tv/api.php/provide/vod",
             "name": "豆瓣资源",
