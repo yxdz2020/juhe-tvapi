@@ -68,11 +68,6 @@
             "api": "https://cj.lziapi.com/api.php/provide/vod",
             "name": "量子资源"
         },
-        "tv1080zy": {
-            "api": "https://api.1080zyku.com/inc/api_mac10.php",
-            "name": "1080资源",
-            "detail": "https://api.1080zyku.com"
-        },
         "tvckzy": {
             "api": "https://ckzy.me/api.php/provide/vod",
             "name": "CK资源",
@@ -133,11 +128,6 @@
             "name": "旺旺资源",
             "detail": "https://api.wwzy.tv"
         },
-        "tvzuid1": {
-            "api": "http://zuidazy.me/api.php/provide/vod",
-            "name": "最大点播",
-            "detail": "http://zuidazy.me"
-        },
         "tvbubu": {
             "api": "https://api.yparse.com/api/json",
             "name": "步步高资源",
@@ -147,11 +137,6 @@
             "api": "https://api.niuniuzy.me/api.php/provide/vod",
             "name": "牛牛点播",
             "detail": "https://api.niuniuzy.me"
-        },
-        "tv1080zy2": {
-            "api": "https://api.1080zyku.com/inc/apijson.php/",
-            "name": "神马云",
-            "detail": "https://api.1080zyku.com"
         },
         "tvsuoni": {
             "api": "https://suoniapi.com/api.php/provide/vod",
@@ -177,11 +162,6 @@
             "api": "https://hhzyapi.com/api.php/provide/vod",
             "name": "豪华资源",
             "detail": "https://hhzyapi.com"
-        },
-        "tvsubo": {
-            "api": "https://subocaiji.com/api.php/provide/vod",
-            "name": "速博资源",
-            "detail": ""
         },
         "tvjinying1": {
             "api": "https://jinyingzy.com/api.php/provide/vod",
@@ -236,10 +216,6 @@
         "非凡资源": {
             "api": "http://cj.ffzyapi.com/api.php/provide/vod",
             "name": "非凡资源"
-        },
-        "kuaichezy": {
-            "api": "https://caiji.kuaichezy.org/api.php/provide/vod",
-            "name": "快车资源"
         },
         "yingshigongchang": {
             "api": "https://cj.lziapi.com/api.php/provide/vod/",
@@ -304,18 +280,6 @@
             "name": "🎬金蝉影视",
             "api": "https://zy.jinchancaiji.com/api.php/provide/vod",
             "detail": "https://zy.jinchancaiji.com"
-        },
-        "zuidazy.co": {
-            "_comment": "备用",
-            "name": "🎬最大点播",
-            "api": "https://zuidazy.me/api.php/provide/vod",
-            "detail": "https://zuidazy.co"
-        },
-        "1080zyk4.com": {
-            "_comment": "JSON 里所有中文字符为 Unicode 编码",
-            "name": "🎬优质资源",
-            "api": "https://api.yzzy-api.com/inc/apijson.php",
-            "detail": "https://1080zyk4.com"
         }
     }
 }
