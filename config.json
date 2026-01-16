@@ -10,6 +10,10 @@
             "api": "https://bfzyapi.com/api.php/provide/vod",
             "name": "暴风资源"
         },
+        "tyyszy": {
+            "api": "https://tyyszy.com/api.php/provide/vod",
+            "name": "天涯资源"
+        },
         "ffzy": {
             "api": "https://api.ffzyapi.com/api.php/provide/vod",
             "name": "非凡影视",
@@ -164,11 +168,6 @@
             "name": "虎牙资源",
             "detail": "https://www.huyaapi.com"
         },
-        "tvdb1": {
-            "api": "https://caiji.dbzy.tv/api.php/provide/vod",
-            "name": "豆瓣资源",
-            "detail": "https://caiji.dbzy.tv"
-        },
         "tvhhzy": {
             "api": "https://hhzyapi.com/api.php/provide/vod",
             "name": "豪华资源",
@@ -254,11 +253,6 @@
             "name": "🎬-爱奇艺-",
             "api": "https://iqiyizyapi.com/api.php/provide/vod",
             "detail": "https://iqiyizyapi.com"
-        },
-        "dbzy.tv": {
-            "name": "🎬豆瓣资源",
-            "api": "https://caiji.dbzy5.com/api.php/provide/vod",
-            "detail": "https://dbzy.tv"
         },
         "www.maoyanzy.com": {
             "name": "🎬猫眼资源",
