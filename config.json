@@ -294,11 +294,6 @@
             "api": "https://pz.168188.dpdns.org/?url=https://api.apibdzy.com/api.php/provide/vod",
             "detail": "https://bdzy1.com"
         },
-        "lovedan.net": {
-            "name": "🎬艾旦影视",
-            "api": "https://pz.v88.qzz.io/?url=https://lovedan.net/api.php/provide/vod",
-            "detail": "https://lovedan.net"
-        },
         "zy.jinchancaiji.com": {
             "_comment": "无搜索结果",
             "name": "🎬金蝉影视",

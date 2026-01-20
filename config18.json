@@ -174,7 +174,7 @@
         "souavzyw.com": {
             "name": "🔞souavZY",
             "api": "https://api.souavzyw.net/api.php/provide/vod",
-            "detail": "souavzyw.com"
+            "detail": "https://api.souavzyw.net"
         },
         "xiangjiaozyw.com": {
             "_comment": "无搜索结果",
@@ -185,7 +185,7 @@
         "xingba111.com": {
             "_comment": "403 Forbidden",
             "name": "🔞杏吧资源",
-            "api": "https://pz.168188.dpdns.org/?url=https://xingba222.com/api.php/provide/vod",
+            "api": "https://xingba222.com/api.php/provide/vod",
             "detail": "https://xingba111.com"
         },
         "semaozy1.com": {
