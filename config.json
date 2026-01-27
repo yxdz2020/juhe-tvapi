@@ -78,6 +78,16 @@
             "name": "CK资源",
             "detail": "https://ckzy.me"
         },
+        "tvuku1": {
+            "api": "https://api.ukuapi.com/api.php/provide/vod",
+            "name": "U酷资源",
+            "detail": "https://api.ukuapi.com"
+        },
+        "tvuku2": {
+            "api": "https://api.ukuapi88.com/api.php/provide/vod",
+            "name": "U酷资源2",
+            "detail": "https://api.ukuapi88.com"
+        },
         "tvwujin1": {
             "api": "https://api.wujinapi.cc/api.php/provide/vod",
             "name": "wujinapi无尽",
@@ -295,6 +305,12 @@
             "name": "🎬最大点播",
             "api": "https://zuidazy.me/api.php/provide/vod",
             "detail": "https://zuidazy.co"
+        },
+        "1080zyk4.com": {
+            "_comment": "JSON 里所有中文字符为 Unicode 编码",
+            "name": "🎬优质资源",
+            "api": "https://api.yzzy-api.com/inc/apijson.php",
+            "detail": "https://1080zyk4.com"
         }
     }
 }
