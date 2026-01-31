@@ -264,11 +264,6 @@
             "api": "https://caiji.dbzy5.com/api.php/provide/vod",
             "detail": "https://dbzy.tv"
         },
-        "www.maoyanzy.com": {
-            "name": "🎬猫眼资源",
-            "api": "https://api.maoyanapi.top/api.php/provide/vod",
-            "detail": "https://www.maoyanzy.com"
-        },
         "cj.lzcaiji.com": {
             "name": "🎬量子资源",
             "api": "https://cj.lzcaiji.com/api.php/provide/vod",
