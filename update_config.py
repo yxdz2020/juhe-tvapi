@@ -6,8 +6,8 @@ import time
 
 # --- 配置区 ---
 URLS_TO_FETCH = [
-    "https://raw.githubusercontent.com/cmliu/cmliu/refs/heads/main/tvapi_config_json",  # 这是一个Base58加密的链接
-    "https://raw.githubusercontent.com/666zmy/MoonTV/refs/heads/main/config.json", # 这是一个明文JSON链接
+    "https://raw.githubusercontent.com/cmliu/cmliu/refs/heads/main/tvapi_config_json",  
+    "https://raw.githubusercontent.com/666zmy/MoonTV/refs/heads/main/config.json", 
     "https://raw.githubusercontent.com/hafrey1/LunaTV-config/main/LunaTV-config.txt",
     "https://raw.githubusercontent.com/rapier15sapper/ew/refs/heads/main/test.json"
 ]
@@ -38,7 +38,6 @@ def fetch_and_decode_url(url):
                 return None
 
             data = None
-            # --- 核心改动：智能判断逻辑 ---
             try:
                 # 路径1：首先，尝试进行Base58解码
                 print("...尝试将内容作为 Base58 解码...")
@@ -57,12 +56,37 @@ def fetch_and_decode_url(url):
                     print(f"错误: 内容既不是有效的Base58，也不是有效的JSON。错误信息: {json_e}")
                     return None
             
-            # --- 后续流程不变 ---
             print(f"成功解析链接内容: {url}")
+
+            # ==========================================
+            # --- 新增核心逻辑：兼容列表(Array)格式的源 ---
+            # ==========================================
+            if isinstance(data, list):
+                print("...检测到内容为列表(Array)格式，正在自动转换为字典格式...")
+                converted_sites = {}
+                for index, item in enumerate(data):
+                    if isinstance(item, dict):
+                        # 只要有 api 或者 url 字段就认为是有效的视频源
+                        if "api" in item or "url" in item:
+                            # 尝试获取唯一键(key)或名称(name)，如果没有则自动生成
+                            site_key = item.get("key") or item.get("name") or f"site_list_{index}"
+                            converted_sites[site_key] = item
+                
+                if converted_sites:
+                    # 重新包装为含有 "api_site" 键的字典，以便通过后续的白名单过滤
+                    data = {
+                        "api_site": converted_sites
+                    }
+                    print(f"...成功从列表中提取并转换了 {len(converted_sites)} 个有效源。")
+                else:
+                    print("警告: 列表中未找到任何包含 'api' 或 'url' 字段的有效源。")
+                    return None
+            # ==========================================
+
             if isinstance(data, dict):
                 filtered_data = {key: data[key] for key in ALLOWED_TOP_LEVEL_KEYS if key in data}
                 if not filtered_data:
-                    print("警告: 解析后的内容中未找到任何白名单指定的键。")
+                    print("警告: 解析后的内容中未找到任何白名单指定的键 (包含 cache_time, api_site)。")
                     return None
                 print(f"内容已按白名单过滤，保留键: {list(filtered_data.keys())}")
                 return filtered_data
