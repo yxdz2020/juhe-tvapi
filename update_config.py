@@ -13,7 +13,6 @@ URLS_TO_FETCH = [
 ]
 
 # --- 白名单配置 ---
-# 脚本将只从解码后的内容中寻找并保留这些顶级键
 ALLOWED_TOP_LEVEL_KEYS = {"cache_time", "api_site"}
 
 OUTPUT_FILENAME = "config.json"
@@ -29,7 +28,6 @@ def fetch_and_decode_url(url):
             print(f"正在尝试第 {attempt + 1}/{MAX_RETRIES} 次请求链接: {url}")
             response = requests.get(url, timeout=15)
             response.raise_for_status()
-            # 指定编码为 utf-8，避免因服务器未指定编码而导致的乱码问题
             response.encoding = 'utf-8'
             content = response.text.strip()
             
@@ -39,47 +37,51 @@ def fetch_and_decode_url(url):
 
             data = None
             try:
-                # 路径1：首先，尝试进行Base58解码
                 print("...尝试将内容作为 Base58 解码...")
                 decoded_bytes = base58.b58decode(content)
                 decoded_string = decoded_bytes.decode('utf-8')
                 data = json.loads(decoded_string)
                 print("...成功将内容作为 Base58 解码。")
             except Exception:
-                # 路径2：如果Base58解码失败，则认为内容是明文JSON
                 print("...Base58 解码失败，尝试直接作为明文 JSON 解析...")
                 try:
                     data = json.loads(content)
                     print("...成功将内容作为明文 JSON 解析。")
                 except json.JSONDecodeError as json_e:
-                    # 如果作为JSON解析也失败，说明内容格式有问题
                     print(f"错误: 内容既不是有效的Base58，也不是有效的JSON。错误信息: {json_e}")
                     return None
             
             print(f"成功解析链接内容: {url}")
 
             # ==========================================
-            # --- 新增核心逻辑：兼容列表(Array)格式的源 ---
+            # --- 核心改动：兼容 baseUrl 和特定格式转换 ---
             # ==========================================
             if isinstance(data, list):
                 print("...检测到内容为列表(Array)格式，正在自动转换为字典格式...")
                 converted_sites = {}
                 for index, item in enumerate(data):
                     if isinstance(item, dict):
-                        # 只要有 api 或者 url 字段就认为是有效的视频源
-                        if "api" in item or "url" in item:
-                            # 尝试获取唯一键(key)或名称(name)，如果没有则自动生成
-                            site_key = item.get("key") or item.get("name") or f"site_list_{index}"
-                            converted_sites[site_key] = item
+                        # 识别 api, url 或 baseUrl 字段
+                        api_link = item.get("baseUrl") or item.get("api") or item.get("url")
+                        
+                        if api_link:
+                            # 优先使用 id，其次 key，再次 name，最后使用序号兜底
+                            site_key = item.get("id") or item.get("key") or item.get("name") or f"site_list_{index}"
+                            
+                            # 按照标准格式重新构建字典，自动丢弃 group, enabled, priority 等不需要的字段
+                            converted_sites[site_key] = {
+                                "name": item.get("name", site_key),
+                                "api": api_link,
+                                "detail": ""
+                            }
                 
                 if converted_sites:
-                    # 重新包装为含有 "api_site" 键的字典，以便通过后续的白名单过滤
                     data = {
                         "api_site": converted_sites
                     }
                     print(f"...成功从列表中提取并转换了 {len(converted_sites)} 个有效源。")
                 else:
-                    print("警告: 列表中未找到任何包含 'api' 或 'url' 字段的有效源。")
+                    print("警告: 列表中未找到任何包含 'api', 'url' 或 'baseUrl' 字段的有效源。")
                     return None
             # ==========================================
 
@@ -116,7 +118,6 @@ def main():
         return
     print(f"\n过滤完成，共获得 {len(clean_data_buffer)} 组有效内容。准备通过重命名方式合并...")
     
-    # 智能合并，重命名重复项
     merged_api_sites = {}
     for item in clean_data_buffer:
         if "api_site" in item and isinstance(item.get("api_site"), dict):
