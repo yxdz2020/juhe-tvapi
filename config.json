@@ -316,6 +316,46 @@
             "name": "🎬优质资源",
             "api": "https://api.yzzy-api.com/inc/apijson.php",
             "detail": "https://1080zyk4.com"
+        },
+        "feifan": {
+            "name": "非凡资源",
+            "api": "http://ffzy5.tv/api.php/provide/vod",
+            "detail": ""
+        },
+        "moduzy": {
+            "name": "魔都影视",
+            "api": "https://www.moduzy.com/api.php/provide/vod",
+            "detail": ""
+        },
+        "feifan1": {
+            "name": "非凡线路1",
+            "api": "http://ffzy1.tv/api.php/provide/vod",
+            "detail": ""
+        },
+        "baofeng2": {
+            "name": "暴风APP",
+            "api": "https://app.bfzyapi.com/api.php/provide/vod",
+            "detail": ""
+        },
+        "tianyazy": {
+            "name": "天涯海角",
+            "api": "https://tyyszyapi.com/api.php/provide/vod",
+            "detail": ""
+        },
+        "guangsu2": {
+            "name": "光速HTTP",
+            "api": "http://api.guangsuapi.com/api.php/provide/vod",
+            "detail": ""
+        },
+        "yilingba2": {
+            "name": "1080JSON",
+            "api": "https://api.1080zyku.com/inc/apijson.php",
+            "detail": ""
+        },
+        "ck": {
+            "name": "CK",
+            "api": "https://www.ckzy1.com/api.php/provide/vod",
+            "detail": ""
         }
     }
 }

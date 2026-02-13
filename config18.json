@@ -194,6 +194,16 @@
             "name": "🔞丝袜资源",
             "api": "https://siwazyw.tv/api.php/provide/vod",
             "detail": "https://siwazyw.tv"
+        },
+        "hsck": {
+            "name": "黄色仓库",
+            "api": "https://hsckzy.vip/api.php/provide/vod",
+            "detail": ""
+        },
+        "yutu": {
+            "name": "玉兔",
+            "api": "https://yutuzy10.com/api.php/provide/vod",
+            "detail": ""
         }
     }
 }
