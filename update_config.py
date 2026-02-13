@@ -9,7 +9,7 @@ URLS_TO_FETCH = [
     "https://raw.githubusercontent.com/cmliu/cmliu/refs/heads/main/tvapi_config_json",  # 这是一个Base58加密的链接
     "https://raw.githubusercontent.com/666zmy/MoonTV/refs/heads/main/config.json", # 这是一个明文JSON链接
     "https://raw.githubusercontent.com/hafrey1/LunaTV-config/main/LunaTV-config.txt",
-    "https://gist.githubusercontent.com/senshinya/5a5cb900dfa888fd61d767530f00fc48/raw/gistfile1.txt" # 可以混合放置
+    "https://raw.githubusercontent.com/rapier15sapper/ew/refs/heads/main/test.json"
 ]
 
 # --- 白名单配置 ---
