@@ -318,15 +318,15 @@
             "api": "https://www.moduzy.com/api.php/provide/vod",
             "detail": "https://www.moduzy.com"
         },
+        "feifan1": {
+            "name": "非凡线路1",
+            "api": "http://ffzy1.tv/api.php/provide/vod",
+            "detail": "http://ffzy1.tv"
+        },
         "baofeng2": {
             "name": "暴风APP",
             "api": "https://app.bfzyapi.com/api.php/provide/vod",
             "detail": "https://app.bfzyapi.com"
-        },
-        "tianyazy": {
-            "name": "天涯海角",
-            "api": "https://tyyszyapi.com/api.php/provide/vod",
-            "detail": "https://tyyszyapi.com"
         },
         "ck": {
             "name": "CK",

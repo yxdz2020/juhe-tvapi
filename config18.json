@@ -16,11 +16,6 @@
             "name": "黄色资源啊啊",
             "detail": "https://hsckzy888.com"
         },
-        "xibaocaiji": {
-            "api": "https://www.xxibaozyw.com/api.php/provide/vod",
-            "name": "细胞采集黄色",
-            "detail": "https://www.xxibaozyw.com"
-        },
         "api_2": {
             "name": "AV-155资源",
             "api": "https://155api.com/api.php/provide/vod",
@@ -146,11 +141,6 @@
             "api": "https://pz.168188.dpdns.org/?url=https://apilj.com/api.php/provide/vod",
             "detail": "https://pz.168188.dpdns.org"
         },
-        "xzytv.com": {
-            "name": "🔞-幸资源-",
-            "api": "https://xzybb2.com/api.php/provide/vod",
-            "detail": "https://xzybb2.com"
-        },
         "doudouzy.com": {
             "name": "🔞豆豆资源",
             "api": "https://api.douapi.cc/api.php/provide/vod",
@@ -176,12 +166,6 @@
             "api": "https://api.souavzyw.net/api.php/provide/vod",
             "detail": "https://api.souavzyw.net"
         },
-        "xiangjiaozyw.com": {
-            "_comment": "无搜索结果",
-            "name": "🔞香蕉资源",
-            "api": "https://www.xiangjiaozyw.com/api.php/provide/vod",
-            "detail": "https://www.xiangjiaozyw.com"
-        },
         "xingba111.com": {
             "_comment": "403 Forbidden",
             "name": "🔞杏吧资源",
@@ -199,6 +183,11 @@
             "name": "🔞丝袜资源",
             "api": "https://siwazyw.tv/api.php/provide/vod",
             "detail": "https://siwazyw.tv"
+        },
+        "tianyazy": {
+            "name": "天涯海角",
+            "api": "https://tyyszyapi.com/api.php/provide/vod",
+            "detail": "https://tyyszyapi.com"
         },
         "hsck": {
             "name": "黄色仓库",
