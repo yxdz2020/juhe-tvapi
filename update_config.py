@@ -3,6 +3,7 @@ import requests
 import base58
 import json
 import time
+from urllib.parse import urlparse  # --- 引入 URL 解析库 ---
 
 # --- 配置区 ---
 URLS_TO_FETCH = [
@@ -53,26 +54,20 @@ def fetch_and_decode_url(url):
             
             print(f"成功解析链接内容: {url}")
 
-            # ==========================================
-            # --- 核心改动：兼容 baseUrl 和特定格式转换 ---
-            # ==========================================
             if isinstance(data, list):
                 print("...检测到内容为列表(Array)格式，正在自动转换为字典格式...")
                 converted_sites = {}
                 for index, item in enumerate(data):
                     if isinstance(item, dict):
-                        # 识别 api, url 或 baseUrl 字段
                         api_link = item.get("baseUrl") or item.get("api") or item.get("url")
                         
                         if api_link:
-                            # 优先使用 id，其次 key，再次 name，最后使用序号兜底
                             site_key = item.get("id") or item.get("key") or item.get("name") or f"site_list_{index}"
                             
-                            # 按照标准格式重新构建字典，自动丢弃 group, enabled, priority 等不需要的字段
                             converted_sites[site_key] = {
                                 "name": item.get("name", site_key),
-                                "api": api_link,
-                                "detail": ""
+                                "api": api_link
+                                # 在这里移除了强制写入空 detail 的逻辑，统交由后面的 main 模块处理
                             }
                 
                 if converted_sites:
@@ -83,7 +78,6 @@ def fetch_and_decode_url(url):
                 else:
                     print("警告: 列表中未找到任何包含 'api', 'url' 或 'baseUrl' 字段的有效源。")
                     return None
-            # ==========================================
 
             if isinstance(data, dict):
                 filtered_data = {key: data[key] for key in ALLOWED_TOP_LEVEL_KEYS if key in data}
@@ -116,12 +110,35 @@ def main():
     if not clean_data_buffer:
         print("错误: 所有链接内容均为空或无法按规则过滤，无法生成配置文件。")
         return
-    print(f"\n过滤完成，共获得 {len(clean_data_buffer)} 组有效内容。准备通过重命名方式合并...")
+    print(f"\n过滤完成，共获得 {len(clean_data_buffer)} 组有效内容。准备提取 detail 字段并合并...")
     
     merged_api_sites = {}
     for item in clean_data_buffer:
         if "api_site" in item and isinstance(item.get("api_site"), dict):
             for key, value in item["api_site"].items():
+                
+                # ==========================================
+                # --- 核心改动：全局统一自动提取 detail 字段 ---
+                # ==========================================
+                if isinstance(value, dict) and "api" in value:
+                    api_url = value["api"]
+                    try:
+                        # 尝试解析 URL (例如把 http://abc.com/api.php 变成 http://abc.com)
+                        parsed_uri = urlparse(api_url)
+                        if parsed_uri.scheme and parsed_uri.netloc:
+                            base_url = f"{parsed_uri.scheme}://{parsed_uri.netloc}"
+                            value["detail"] = base_url
+                        else:
+                            # 如果提取不出合法域名，给个空字符串兜底
+                            value.setdefault("detail", "")
+                    except Exception:
+                        value.setdefault("detail", "")
+                else:
+                    # 对于根本没有 api 字段的异常字典，也给个空值保持格式统一
+                    if isinstance(value, dict):
+                        value.setdefault("detail", "")
+                # ==========================================
+
                 new_key = key
                 counter = 2
                 while new_key in merged_api_sites:
