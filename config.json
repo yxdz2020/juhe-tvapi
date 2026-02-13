@@ -236,35 +236,10 @@
             "name": "索尼-闪电资源",
             "detail": "https://xsd.sdzyapi.com"
         },
-        "量子资源": {
-            "api": "http://cj.lziapi.com/api.php/provide/vod",
-            "name": "量子资源",
-            "detail": "http://cj.lziapi.com"
-        },
-        "闪电资源": {
-            "api": "http://sdzyapi.com/api.php/provide/vod",
-            "name": "闪电资源",
-            "detail": "http://sdzyapi.com"
-        },
-        "新浪资源": {
-            "api": "http://api.xinlangapi.com/xinlangapi.php/provide/vod",
-            "name": "新浪资源",
-            "detail": "http://api.xinlangapi.com"
-        },
-        "非凡资源": {
-            "api": "http://cj.ffzyapi.com/api.php/provide/vod",
-            "name": "非凡资源",
-            "detail": "http://cj.ffzyapi.com"
-        },
         "kuaichezy": {
             "api": "https://caiji.kuaichezy.org/api.php/provide/vod",
             "name": "快车资源",
             "detail": "https://caiji.kuaichezy.org"
-        },
-        "yingshigongchang": {
-            "api": "https://cj.lziapi.com/api.php/provide/vod/",
-            "name": "影视工厂",
-            "detail": "https://cj.lziapi.com"
         },
         "api_15": {
             "name": "TV-如意资源",
@@ -327,12 +302,6 @@
             "api": "https://zy.jinchancaiji.com/api.php/provide/vod",
             "detail": "https://zy.jinchancaiji.com"
         },
-        "zuidazy.co": {
-            "_comment": "备用",
-            "name": "🎬最大点播",
-            "api": "https://zuidazy.me/api.php/provide/vod",
-            "detail": "https://zuidazy.me"
-        },
         "1080zyk4.com": {
             "_comment": "JSON 里所有中文字符为 Unicode 编码",
             "name": "🎬优质资源",
@@ -358,16 +327,6 @@
             "name": "天涯海角",
             "api": "https://tyyszyapi.com/api.php/provide/vod",
             "detail": "https://tyyszyapi.com"
-        },
-        "guangsu2": {
-            "name": "光速HTTP",
-            "api": "http://api.guangsuapi.com/api.php/provide/vod",
-            "detail": "http://api.guangsuapi.com"
-        },
-        "yilingba2": {
-            "name": "1080JSON",
-            "api": "https://api.1080zyku.com/inc/apijson.php",
-            "detail": "https://api.1080zyku.com"
         },
         "ck": {
             "name": "CK",
