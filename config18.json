@@ -121,11 +121,6 @@
             "name": "小鸡资源",
             "detail": "https://api.xiaojizy.live"
         },
-        "www.yyzywcj.com": {
-            "name": "🔞优优资源",
-            "api": "https://www.yyzywcj.com/api.php/provide/vod",
-            "detail": "https://www.yyzywcj.com"
-        },
         "hsckzy.xyz": {
             "name": "🔞黄色仓库",
             "api": "https://hsckzy.xyz/api.php/provide/vod",
