@@ -51,6 +51,16 @@
             "api": "https://lbapi9.com/api.php/provide/vod",
             "detail": "https://lbapi9.com"
         },
+        "api_57": {
+            "name": "AV-奥斯卡资源",
+            "api": "https://aosikazy.com/api.php/provide/vod",
+            "detail": "https://aosikazy.com"
+        },
+        "api_58": {
+            "name": "AV-奶香香",
+            "api": "https://Naixxzy.com/api.php/provide/vod",
+            "detail": "https://Naixxzy.com"
+        },
         "api_60": {
             "name": "AV-淫水机资源",
             "api": "https://www.xrbsp.com/api/json.php",
@@ -178,12 +188,6 @@
             "name": "🔞色猫资源",
             "api": "https://caiji.semaozy.net/inc/apijson_vod.php/provide/vod",
             "detail": "https://caiji.semaozy.net"
-        },
-        "siwazyw.tv": {
-            "_comment": "污染搜索结果",
-            "name": "🔞丝袜资源",
-            "api": "https://siwazyw.tv/api.php/provide/vod",
-            "detail": "https://siwazyw.tv"
         },
         "tianyazy": {
             "name": "天涯海角",

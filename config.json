@@ -31,11 +31,6 @@
             "name": "茅台资源",
             "detail": "https://caiji.maotaizy.cc"
         },
-        "wolong": {
-            "api": "https://wolongzyw.com/api.php/provide/vod",
-            "name": "卧龙资源",
-            "detail": "https://wolongzyw.com"
-        },
         "jisu": {
             "api": "https://jszyapi.com/api.php/provide/vod",
             "name": "极速资源",
@@ -115,16 +110,6 @@
             "api": "https://api.guangsuapi.com/api.php/provide/vod",
             "name": "光速资源",
             "detail": "https://api.guangsuapi.com"
-        },
-        "tvwolong1": {
-            "api": "https://collect.wolongzyw.com/api.php/provide/vod",
-            "name": "卧龙点播",
-            "detail": "https://collect.wolongzyw.com"
-        },
-        "tvwolong2": {
-            "api": "https://collect.wolongzy.cc/api.php/provide/vod",
-            "name": "卧龙资源",
-            "detail": "https://collect.wolongzy.cc"
         },
         "tvxinlang": {
             "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
@@ -307,11 +292,6 @@
             "name": "🎬优质资源",
             "api": "https://api.yzzy-api.com/inc/apijson.php",
             "detail": "https://api.yzzy-api.com"
-        },
-        "feifan": {
-            "name": "非凡资源",
-            "api": "http://ffzy5.tv/api.php/provide/vod",
-            "detail": "http://ffzy5.tv"
         },
         "moduzy": {
             "name": "魔都影视",
