@@ -91,6 +91,16 @@
             "name": "无尽资源3",
             "detail": "https://api.wujinapi.net"
         },
+        "wwzy": {
+            "api": "https://wwzy.tv/api.php/provide/vod",
+            "name": "旺旺短剧",
+            "detail": "https://wwzy.tv"
+        },
+        "tvwwzy2": {
+            "api": "https://api.wwzy.tv/api.php/provide/vod",
+            "name": "旺旺资源",
+            "detail": "https://api.wwzy.tv"
+        },
         "bfzy": {
             "api": "https://bfzyapi.com/api.php/provide/vod",
             "name": "暴风资源",

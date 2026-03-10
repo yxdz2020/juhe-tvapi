@@ -151,6 +151,11 @@
             "api": "https://api.douapi.cc/api.php/provide/vod",
             "detail": "https://api.douapi.cc"
         },
+        "didizy.com": {
+            "name": "🔞滴滴资源",
+            "api": "https://api.ddapi.cc/api.php/provide/vod",
+            "detail": "https://api.ddapi.cc"
+        },
         "heiliaozy.cc": {
             "name": "🔞黑料资源",
             "api": "https://www.heiliaozyapi.com/api.php/provide/vod",
