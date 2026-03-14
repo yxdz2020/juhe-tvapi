@@ -16,16 +16,6 @@
             "name": "CK资源",
             "detail": "https://ckzy.me"
         },
-        "tvuku1": {
-            "api": "https://api.ukuapi.com/api.php/provide/vod",
-            "name": "U酷资源",
-            "detail": "https://api.ukuapi.com"
-        },
-        "tvuku2": {
-            "api": "https://api.ukuapi88.com/api.php/provide/vod",
-            "name": "U酷资源2",
-            "detail": "https://api.ukuapi88.com"
-        },
         "ikun": {
             "api": "https://ikunzyapi.com/api.php/provide/vod",
             "name": "iKun资源",
@@ -230,11 +220,6 @@
             "name": "TV-步步高资源",
             "api": "https://api.yparse.com/api/json",
             "detail": "https://api.yparse.com"
-        },
-        "api_29": {
-            "name": "TV-电影天堂资源",
-            "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
-            "detail": "http://caiji.dyttzyapi.com"
         },
         "api_45": {
             "name": "TV-非凡资源",
